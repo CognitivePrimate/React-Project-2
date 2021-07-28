@@ -1,0 +1,21 @@
+div.SearchContainer {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+div.SearchContainer div.FormContainer {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    padding: 20px;
+    background-color: rgb(204, 204, 204);
+}
+
+div.SearchContainer div.SearchOptionsContainer {
+    display: flex;
+    flex-direction: column;
+}
