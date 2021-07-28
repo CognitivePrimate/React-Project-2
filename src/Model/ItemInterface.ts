@@ -13,5 +13,4 @@ export default interface Item {
     calories: number;
     totalTime: number;
     favorite: boolean;
-
 }
