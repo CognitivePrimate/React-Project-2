@@ -1,9 +1,13 @@
+import { useState } from "react";
 
 
 function Header(){
 
+
     return (
-        <h1>Header component</h1>
+        <div className="Header">
+     
+        </div>
     )
 
 }
