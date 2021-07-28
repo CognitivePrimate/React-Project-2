@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-
-
 export default interface Item {
     item: string
-=======
+}
 // blueprint for individual recipe searched and returned item or items
 export default interface Item {
     label: string;
@@ -16,5 +13,5 @@ export default interface Item {
     calories: number;
     totalTime: number;
     favorite: boolean;
->>>>>>> ff05ca94ee99655713aa3a5c0d1256008ab629ba
+
 }
