@@ -1,8 +1,9 @@
 import './App.css';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, Switch} from 'react-router-dom';
 import Header from './Components/Header/Header';
 import HomePageSearch from './Components/HomePageSearch/HomePageSearch';
 import { ItemContextProvider } from './Context/ItemContextProvider';
+import FoundItems from './Components/FoundItems/FoundItems';
 
 function App() {
 
@@ -11,6 +12,13 @@ function App() {
       <ItemContextProvider>
         <HomePageSearch/>
       </ItemContextProvider>
+
+      <Switch>
+      <ItemContextProvider>
+        <FoundItems/>
+      </ItemContextProvider>
+        
+      </Switch>
         
         
     </Router>

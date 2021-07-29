@@ -14,13 +14,7 @@ function Header() {
             <nav>
                 <ul>
                     <li>
-                        <NavLink to="/detailedItem">Detailed Items</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/favorite">Favorites</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/foundItem">Found Items Items</NavLink>
+                     <NavLink to="/favorite">Favorites</NavLink>
                     </li>
                 </ul>
             </nav>
