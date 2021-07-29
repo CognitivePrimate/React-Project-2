@@ -7,7 +7,7 @@ export interface ItemContextModel {
     favorites: Item[];
     addFavorite: (item: Item) => void;
     removeFavorite: (index: number) => void;
-    addItem: (item: Item) => void;
+    addItem: (newItem: Item[]) => void;
 }
 
 const defaultValue: ItemContextModel = {
@@ -30,11 +30,8 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
 
     // FUNCTIONS
     // to be called dependent on search params? ***delete if not useable***
-    const addItem = (item: Item): void => {
-        setItems(prevItems => [
-            ...prevItems,
-            item
-        ]);
+    const addItem = (newItems: Item[]): void => {
+        setItems(newItems);
     }
 
     // to be added to favorites section dependant on function call by click
@@ -53,7 +50,7 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         ]);
     }
 
-    return <ItemContext.Provider value={ {items, favorites, addItem, addFavorite, removeFavorite} }>
+    return (<ItemContext.Provider value={ {items, favorites, addItem, addFavorite, removeFavorite} }>
                 {children}
-            </ItemContext.Provider>
+            </ItemContext.Provider>)
 };
