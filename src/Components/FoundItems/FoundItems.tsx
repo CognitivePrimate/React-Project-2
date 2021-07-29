@@ -8,14 +8,14 @@ function FoundItems(){
     const { items, addItem } = useContext(ItemContext);
     
     // TEST
-    useEffect(() => {
-        fetchAllRecipes({query: "chicken"}).then((data) => {
-            console.log(data);
-            addItem(data);
+    // useEffect(() => {
+    //     fetchAllRecipes({query: "chicken"}).then((data) => {
+    //         console.log(data);
+    //         addItem(data);
             
-        })
-    }, []);
-    console.log(items);
+    //     })
+    // }, []);
+    // console.log(items);
     // TEST
 
     return (
