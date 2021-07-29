@@ -14,6 +14,7 @@ const ItemComponent = ({item}: Props) => {
 
     return (
         <Link className="ItemWrapper" to="/DetailedItem">
+            <p>some weird fucking shit is happening</p>
             <div className="ItemWrapperLeft">
                 <h3>{item.label}</h3>
                 <img src={item.image} alt="food-pic"/>

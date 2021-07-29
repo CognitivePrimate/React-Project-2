@@ -1,4 +1,3 @@
-import { queryAllByAltText } from "@testing-library/react";
 import axios from "axios";
 
 // access API

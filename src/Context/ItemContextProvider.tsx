@@ -30,10 +30,17 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
 
     // FUNCTIONS
     // to be called dependent on search params? ***delete if not useable***
-    const addItem = (newItems: Item[]): void => {
-        setItems(newItems);
+    // const addItem = (newItems: Item[]): void => {
+    //     console.log(`in addItems`, newItems);
+    //     setItems(newItems);
+    // }
+    // TEST
+    const addItem = (items: Item[]): void => {
+        console.log(`in addItems: items:`, items);
+        setItems(items);
+        console.log(`in addItems post-Set: items:`, items);
     }
-
+    // TEST
     // to be added to favorites section dependant on function call by click
     const addFavorite = (item: Item): void => {
         setFavorites(prevFavorites => [

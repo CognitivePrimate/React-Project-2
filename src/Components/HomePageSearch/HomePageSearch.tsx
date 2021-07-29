@@ -29,8 +29,9 @@ function HomePageSearch(){
 
     useEffect(() => {
         fetchAllRecipes({query: "chicken"}).then((data) => {
-            console.log(data);
+            console.log("data:", data);
             addItem(data);
+            console.log("items:", items);
             
         })
     }, []);
