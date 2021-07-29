@@ -31,6 +31,7 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // FUNCTIONS
     // to be called dependent on search params? ***delete if not useable***
     const addItem = (newItems: Item[]): void => {
+        console.log(`in addItems`, newItems);
         setItems(newItems);
     }
 
