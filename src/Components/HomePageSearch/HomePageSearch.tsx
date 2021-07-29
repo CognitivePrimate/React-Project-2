@@ -1,6 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { fetchAllRecipes } from "../../Services/RecipeServices";
 import './HomePageSearchStyles.css';
+
+// importing Item interface
+// importing Item interface to use as props for component
+import Item from "../../Model/ItemInterface";
+import { ItemContext } from "../../Context/ItemContextProvider";
 
 
 
@@ -10,11 +15,23 @@ function HomePageSearch(){
         query:'test'
     })
 
-    const [recipes, setRecipes] = useState([]);
+    const {items, favorites, addItem, addFavorite, removeFavorite} = useContext(ItemContext)
+
+    const handleSubmit = () => {
+        // prevent default
+        // on submit, get value entered
+        // set parameters variable as an object && add params into this function (not as interface)
+        // only needs actual search parameters ^^
+        // push results into Params object
+        // conditionally add k/v pairs (not required) to narrow down Params object
+        // make new request to fetch recipe --- use fetch recipe callback but pass Params object
+    }
 
     useEffect(() => {
-        fetchAllRecipes().then((data) => {
-            setRecipes(data);
+        fetchAllRecipes({query: "chicken"}).then((data) => {
+            console.log(data);
+            addItem(data);
+            
         })
     }, []);
 
@@ -38,7 +55,7 @@ function HomePageSearch(){
             </div>
             <section className="SearchResultsContainer">
                 <p>{search.query}</p>
-                <p>{recipes}</p>
+                {/* <p>{recipes}</p> */}
             </section>
         </div>
     )

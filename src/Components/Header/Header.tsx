@@ -1,12 +1,12 @@
-
 import { Link, NavLink } from "react-router-dom";
-
 
 
 function Header() {
 
 
     return (
+
+
 
         <header className="Header">
             <Link to="/"><h1>What's for Dinner Recipe Roundup</h1></Link>
@@ -28,6 +28,7 @@ function Header() {
             </div>
         </header>
     );
+
 }
 
 export default Header;
