@@ -1,20 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Permanent+Marker&family=Tangerine:wght@700&display=swap');
+
 header {
     display:flex;
     justify-content:space-between;
+
 }
 
 header :link {
     text-decoration: none;
     color: red;
+    font-family: merriweather;
+    font-size: 30px;
+    font-weight: bold;
+
 }
 
 h1 {
     color: black;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: fantasy;
+    font-size: 50px;
 }
 
 ul {
     list-style: none;
+
 }
 
 nav {

@@ -36,7 +36,7 @@ function HomePageSearch(){
 
     return (
         <div className="SearchContainer">
-        <h3>Home Page Search component</h3>
+        <h3>Home Page Search Component</h3>
             <div className="FormContainer">
                 <form action="#">
                     <h3>What are ya lookin' for?</h3>
