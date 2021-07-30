@@ -9,11 +9,11 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header/>
       <ItemContextProvider>
         <HomePageSearch/>
       </ItemContextProvider>
-        <Header/>
+        
         
     </Router>
   );
