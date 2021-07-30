@@ -1,13 +1,19 @@
-import { createContext, ReactNode, useState } from "react";
-import Item from "../Model/ItemInterface";
+import { createContext, ReactNode, useEffect, useState } from "react";
+import { Item, Hit } from "../Model/ItemInterface";
+import { fetchAllRecipes } from "../Services/RecipeServices";
 
+interface QueryParams {
+    q: string;
+    calories?: number;
+    glutenFree?: number
+}
 
 export interface ItemContextModel {
-    items: Item[];
+    items: Hit[];
     favorites: Item[];
     addFavorite: (item: Item) => void;
     removeFavorite: (index: number) => void;
-    addItem: (newItem: Item[]) => void;
+    fetchRecipes: (query: any) => void;
 }
 
 const defaultValue: ItemContextModel = {
@@ -15,30 +21,37 @@ const defaultValue: ItemContextModel = {
     favorites: [],
     addFavorite: () => {},
     removeFavorite: () => {},
-    addItem: () => {}
+    fetchRecipes: () => {}
 }
 
 export const ItemContext = createContext(defaultValue);
 
 export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // set state and pass to children
-    const [items, setItems] = useState<Item[]>([]);
+    const [items, setItems] = useState<Hit[]>([]);
 
     // TEST
     const [favorites, setFavorites] = useState<Item[]>([]);
     // TEST
-
-    // FUNCTIONS
-    // to be called dependent on search params? ***delete if not useable***
-    // const addItem = (newItems: Item[]): void => {
-    //     console.log(`in addItems`, newItems);
-    //     setItems(newItems);
-    // }
+    useEffect(() => {
+        fetchAllRecipes({query: "chicken"}).then((data) => {
+            setItems(data)
+        })
+    })
+    
     // TEST
-    const addItem = (items: Item[]): void => {
-        console.log(`in addItems: items:`, items);
-        setItems(items);
-        console.log(`in addItems post-Set: items:`, items);
+    const fetchRecipes = (search: any): void => {
+        const parameters: QueryParams = {
+            q: search.query,
+        }
+        // Real STUFF FROM KYLE
+        if (search.calories) {
+            parameters.calories = search.calories;
+        }
+        fetchAllRecipes(parameters).then((data) => {
+            console.log("data:", data)
+            setItems(data);
+        })
     }
     // TEST
     // to be added to favorites section dependant on function call by click
@@ -57,7 +70,7 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         ]);
     }
 
-    return (<ItemContext.Provider value={ {items, favorites, addItem, addFavorite, removeFavorite} }>
+    return (<ItemContext.Provider value={ {items, favorites, fetchRecipes, addFavorite, removeFavorite} }>
                 {children}
             </ItemContext.Provider>)
 };

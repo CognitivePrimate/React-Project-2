@@ -5,7 +5,7 @@ import Item from "../Item/Item";
 import { fetchAllRecipes } from "../../Services/RecipeServices";
 
 function FoundItems(){
-    const { items, addItem } = useContext(ItemContext);
+    const { items, fetchRecipes } = useContext(ItemContext);
     
     // TEST
     // useEffect(() => {
@@ -25,8 +25,8 @@ function FoundItems(){
             
             {items.map((item, index) => 
                 <Item 
-                    key={`${item.label}-${index}`}
-                    item={item}
+                    key={`${item.recipe.label}-${index}`}
+                    item={item.recipe}
                 />
             )}
 

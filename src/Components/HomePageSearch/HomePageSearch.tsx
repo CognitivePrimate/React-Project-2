@@ -4,18 +4,22 @@ import './HomePageSearchStyles.css';
 
 // importing Item interface
 // importing Item interface to use as props for component
-import Item from "../../Model/ItemInterface";
+import {Item} from "../../Model/ItemInterface";
 import { ItemContext } from "../../Context/ItemContextProvider";
 
 
 
 function HomePageSearch(){
-
+    const {items, favorites, fetchRecipes, addFavorite, removeFavorite} = useContext(ItemContext);
+    
+    // TEST
+    // const [recipes, setRecipes] = useState<Item[]>(items);
+    // TEST
     const [search, setSearch] = useState({
         query:'test'
     })
 
-    const {items, favorites, addItem, addFavorite, removeFavorite} = useContext(ItemContext)
+    
 
     const handleSubmit = () => {
         // prevent default
@@ -27,14 +31,8 @@ function HomePageSearch(){
         // make new request to fetch recipe --- use fetch recipe callback but pass Params object
     }
 
-    useEffect(() => {
-        fetchAllRecipes({query: "chicken"}).then((data) => {
-            console.log("data:", data);
-            addItem(data);
-            console.log("items:", items);
-            
-        })
-    }, []);
+    
+    console.log("items:", items);
 
     return (
         <div className="SearchContainer">
