@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 // importing Item interface to use as props for component
-import Item from "../../Model/ItemInterface";
+import {Item} from "../../Model/ItemInterface";
 
 // import css
 import "./Item.css";
@@ -14,7 +14,7 @@ const ItemComponent = ({item}: Props) => {
 
     return (
         <Link className="ItemWrapper" to="/DetailedItem">
-            <p>some weird fucking shit is happening</p>
+            <p>some weird shit is happening</p>
             <div className="ItemWrapperLeft">
                 <h3>{item.label}</h3>
                 <img src={item.image} alt="food-pic"/>
