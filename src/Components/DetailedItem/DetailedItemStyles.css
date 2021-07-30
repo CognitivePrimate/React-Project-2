@@ -1,0 +1,8 @@
+.DetailedItemWrapper {
+    /* background-image: url({foundItem?.recipe.image}); */
+    /* width: 100%; */
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: 100%, cover;
+    border-radius: 5px;
+}

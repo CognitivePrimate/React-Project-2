@@ -20,11 +20,6 @@ function App() {
             </ItemContextProvider>
           </Route>
         
-  
-        <ItemContextProvider>
-          <FoundItems />
-        </ItemContextProvider>
-        
           <Route path="/DetailedItem/:label" exact>
             <ItemContextProvider>
               <DetailedItem />
