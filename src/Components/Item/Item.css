@@ -5,12 +5,65 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 237px;
     text-decoration: none;
-    box-shadow: 2px 2px 5px 2px (0 0 0 0.5);
+    margin: 2.5px;
+    transition: all 0.3s;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    animation: FadeIn 1s;
+}
+
+/* @keyframes FadeIn {
+    from {
+        opacity: 0;
+    }to{
+        opacity:1;
+    }
+} */
+
+.ItemWrapper:hover {
+    box-shadow: 1px 1px 2.5px 1px rgba(0, 0, 0, .5);
+}
+
+.ItemWrapperLeft {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ItemWrapperRight {
+    display: flex;
 }
 
 .ItemImage{
     width: 75%;
-    
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.ItemInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NumberBubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.ItemInfoBit {
+    margin: 2px;
 }
