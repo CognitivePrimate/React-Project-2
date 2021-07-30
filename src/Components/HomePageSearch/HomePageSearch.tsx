@@ -52,11 +52,13 @@ function HomePageSearch(){
                         <label htmlFor="vegetarian">Vegetarian</label>
                         <input type="checkbox" id="vegetarian" name="health-labels" value="vegetarian"/>
                     </div>
+                    <div className="SubmitButtonContainer">
+                        <button>Submit</button>
+                    </div>
                 </form>
             </div>
             <section className="SearchResultsContainer">
                 <p>{search.query}</p>
-                {/* <p>{recipes}</p> */}
             </section>
         </div>
     )
