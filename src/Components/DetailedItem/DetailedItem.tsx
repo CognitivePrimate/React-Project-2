@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ItemContext } from "../../Context/ItemContextProvider";
-import {Hit, Item} from "../../Model/ItemInterface";
+import {Hit} from "../../Model/ItemInterface";
 
+// css
+import "./DetailedItemStyles.css";
 
 interface RouteParams {
     label: string
@@ -13,18 +15,23 @@ function DetailedItem(){
     const {items} = useContext(ItemContext);
     const {label} = useParams<RouteParams>();
 
-    const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
-    console.log(foundItem);
     
+
+    const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
+    console.log("found item:", foundItem);
+    
+    // image variable
+    let background = `${foundItem?.recipe.image}`
+
     return (
-        <div className="DetailedItemWrapper">
+        <div className="DetailedItemWrapper" style={{backgroundImage: `url(${background})`}}>
             <h2>{foundItem?.recipe.label}</h2>
-            <div className="ItemWrapperLeft">
-                <img src={foundItem?.recipe.image} alt="food-pic"/>
+            <div className="DetailedItemWrapperLeft">
+                {/* <img src={foundItem?.recipe.image} alt="food-pic"/> */}
             </div>
-            <div className="ItemWrapperRight">
-                <p>Servings: <div className="numberBubble">{foundItem?.recipe.yield}</div></p>
-                <p>Calories: <div className="numberBubble">{foundItem?.recipe.calories}</div></p>
+            <div className="DetailedItemWrapperRight">
+                <p>Servings: <div className="DetailedNumberBubble">{foundItem?.recipe.yield}</div></p>
+                <p>Calories: <div className="DetailedNumberBubble">{foundItem?.recipe.calories}</div></p>
             </div>
 
 

@@ -1,19 +1,17 @@
 import { ItemContext } from "../../Context/ItemContextProvider";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Item from "../Item/Item";
-import { fetchAllRecipes } from "../../Services/RecipeServices";
+
+// css
+import "./FoundItemsStyles.css";
 
 function FoundItems(){
-    const { items, fetchRecipes } = useContext(ItemContext);
-    
-
+    const { items } = useContext(ItemContext);
     
     return (
         
-        <div className="FoundItemsWrapper">
-            <p>some weirdstuff in FoundItems Component</p>
-            
+        <div className="FoundItemsWrapper">  
             {items.map((item, index) => 
                 <Item 
                     key={`${item.recipe.label}-${index}`}
