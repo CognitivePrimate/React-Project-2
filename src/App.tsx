@@ -13,14 +13,7 @@ function App() {
       <ItemContextProvider>
         <HomePageSearch/>
       </ItemContextProvider>
-
-      <Switch>
-      <ItemContextProvider>
-        <FoundItems/>
-      </ItemContextProvider>
-        
-      </Switch>
-        
+        <Header/>
         
     </Router>
   );

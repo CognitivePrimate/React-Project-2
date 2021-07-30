@@ -1,8 +1,5 @@
-export default interface Item {
-    item: string
-}
 // blueprint for individual recipe searched and returned item or items
-export default interface Item {
+export interface Item {
     label: string;
     image: string;
     url: string;
@@ -14,3 +11,7 @@ export default interface Item {
     totalTime: number;
     favorite: boolean;
 }
+
+export interface Hit {
+    recipe: Item;
+} 
