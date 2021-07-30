@@ -20,9 +20,7 @@ function FoundItems(){
 
     return (
         
-        <div className="FoundItemsWrapper">
-            <p>some weirdstuff in FoundItems Component</p>
-            
+        <div className="FoundItemsWrapper">  
             {items.map((item, index) => 
                 <Item 
                     key={`${item.recipe.label}-${index}`}

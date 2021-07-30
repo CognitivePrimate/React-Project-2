@@ -37,8 +37,8 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         fetchAllRecipes({query: "chicken"}).then((data) => {
             setItems(data)
         })
-    })
-    
+    },[])
+
     // TEST
     const fetchRecipes = (search: any): void => {
         const parameters: QueryParams = {
