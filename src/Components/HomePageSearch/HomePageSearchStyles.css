@@ -1,7 +1,4 @@
 div.SearchContainer {
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -24,6 +21,11 @@ div.SearchContainer div.SearchOptionsContainer {
 div.SearchContainer div.SubmitButtonContainer {
     display: flex;
     justify-content: center;
+}
+
+div.SearchContainer section.SearchOptionSection {
+    display: flex;
+    flex-direction: column;
 }
 
 /*  buttons and inputs */
