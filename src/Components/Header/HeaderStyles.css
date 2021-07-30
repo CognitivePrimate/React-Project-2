@@ -1,0 +1,22 @@
+header {
+    display:flex;
+    justify-content:space-between;
+}
+
+header :link {
+    text-decoration: none;
+    color: red;
+}
+
+h1 {
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    float: right; 
+}

@@ -9,6 +9,7 @@ function App() {
 
   return (
     <Router>
+      <Header />
       <ItemContextProvider>
         <HomePageSearch/>
       </ItemContextProvider>
