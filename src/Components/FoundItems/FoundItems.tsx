@@ -7,17 +7,8 @@ import { fetchAllRecipes } from "../../Services/RecipeServices";
 function FoundItems(){
     const { items, fetchRecipes } = useContext(ItemContext);
     
-    // TEST
-    // useEffect(() => {
-    //     fetchAllRecipes({query: "chicken"}).then((data) => {
-    //         console.log(data);
-    //         addItem(data);
-            
-    //     })
-    // }, []);
-    // console.log(items);
-    // TEST
 
+    
     return (
         
         <div className="FoundItemsWrapper">

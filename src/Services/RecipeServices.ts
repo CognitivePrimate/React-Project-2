@@ -4,12 +4,14 @@ import axios from "axios";
 const RecipeAPIUrlAll: string = "https://api.edamam.com/api/recipes/v2";
 
 // API KEY AND ID
-const id = "267485f9";
-const key = process.env.REACT_APP_EDAMAM_API_KEY
+const id = process.env.REACT_APP_API_ID;
+const key = process.env.REACT_APP_EDAMAM_API_KEY;
+console.log(id);
+console.log(key);
 
 
 interface Params {
-    app_id: string;
+    app_id: string | undefined;
     app_key: string | undefined;
     q: string;
     type: string;

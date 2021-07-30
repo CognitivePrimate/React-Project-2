@@ -12,9 +12,8 @@ function App() {
       <Header/>
       <ItemContextProvider>
         <HomePageSearch/>
+        <FoundItems/>
       </ItemContextProvider>
-        
-        
     </Router>
   );
 }
