@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import { fetchAllRecipes } from "../../Services/RecipeServices";
 import './HomePageSearchStyles.css';
 
@@ -8,19 +8,17 @@ import {Item} from "../../Model/ItemInterface";
 import { ItemContext } from "../../Context/ItemContextProvider";
 
 
+// interface Props {
+//     onSubmit: () => void;
+// }
 
 function HomePageSearch(){
     const {items, favorites, fetchRecipes, addFavorite, removeFavorite} = useContext(ItemContext);
     
-    // TEST
-    // const [recipes, setRecipes] = useState<Item[]>(items);
-    // TEST
-    const [search, setSearch] = useState({
-        query:'test'
-    })
+    const [searchData, setSearchData] = useState('')
 
-    
 
+<<<<<<< HEAD
     // const handleSubmit = () => {
         // prevent default
         // on submit, get value entered
@@ -33,7 +31,34 @@ function HomePageSearch(){
 
     // DEREK TEST
     const handleSubmit = () => {
+=======
+    function handleSubmit(e: FormEvent){
+
+>>>>>>> 68e042888a2e7a125ed2ef4c5aaf6ac88e7e13dd
         // prevent default
+        e.preventDefault();
+
+// attempt 1
+        console.log(searchData);
+        fetchRecipes({search: searchData})
+
+
+// attempt 2
+
+        // fetchAllRecipes({query: searchData}).then((data) => {
+        //     fetchRecipes(data)
+        // }
+
+// attempt 3
+        // fetchRecipes(testSearchItem);
+
+// attempt 4
+        // attempt 1
+        // console.log(searchData);
+        // let NewData = fetchRecipes({search: searchData})
+        // console.log(NewData);
+
+
         // on submit, get value entered
         // set parameters variable as an object && add params into this function (not as interface)
         // only needs actual search parameters ^^
@@ -43,13 +68,15 @@ function HomePageSearch(){
     }
     // DEREK TEST
 
+
     
     console.log("items:", items);
+    console.log(searchData);
 
     return (
         <div className="SearchContainer">
             <div className="FormContainer">
-                <form action="#">
+                <form action="submit" onSubmit={handleSubmit}>
                     <h3>What are ya lookin' for?</h3>
                     <section className="SearchOptionSection">
                         <div className="SearchOptionsContainer">
@@ -60,7 +87,7 @@ function HomePageSearch(){
                         </div>
                         <div>
                             <label htmlFor="search">Search</label>
-                            <input type="text" name="search" id="search" placeholder="grabby paws" />
+                            <input type="text" name="search" id="search" value={searchData} onChange={ (e) => setSearchData(e.target.value) }/>
                         </div>
                     </section>
                     <div className="SubmitButtonContainer">
@@ -69,7 +96,6 @@ function HomePageSearch(){
                 </form>
             </div>
             <section className="SearchResultsContainer">
-                <p>{search.query}</p>
             </section>
         </div>
     )

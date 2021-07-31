@@ -40,14 +40,16 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     },[])
 
     // TEST
-    const fetchRecipes = (search: any): void => {
+    const fetchRecipes = (query: any): void => {
         const parameters: QueryParams = {
-            q: search.query,
+            q: query
         }
+        console.log(parameters);
         // Real STUFF FROM KYLE
-        if (search.calories) {
-            parameters.calories = search.calories;
+        if (query.calories) {
+            parameters.calories = query.calories;
         }
+        console.log(parameters.q)
         fetchAllRecipes(parameters).then((data) => {
             console.log("data:", data)
             setItems(data);
