@@ -15,3 +15,8 @@ export interface Item {
 export interface Hit {
     recipe: Item;
 } 
+
+// export interface Search {
+//     q: string;
+//     glutenFree: 
+// }

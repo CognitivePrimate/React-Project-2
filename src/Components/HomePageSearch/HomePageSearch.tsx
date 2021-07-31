@@ -21,6 +21,17 @@ function HomePageSearch(){
 
     
 
+    // const handleSubmit = () => {
+        // prevent default
+        // on submit, get value entered
+        // set parameters variable as an object && add params into this function (not as interface)
+        // only needs actual search parameters ^^
+        // push results into Params object
+        // conditionally add k/v pairs (not required) to narrow down Params object
+        // make new request to fetch recipe --- use fetch recipe callback but pass Params object
+    // }
+
+    // DEREK TEST
     const handleSubmit = () => {
         // prevent default
         // on submit, get value entered
@@ -30,6 +41,7 @@ function HomePageSearch(){
         // conditionally add k/v pairs (not required) to narrow down Params object
         // make new request to fetch recipe --- use fetch recipe callback but pass Params object
     }
+    // DEREK TEST
 
     
     console.log("items:", items);
@@ -52,7 +64,7 @@ function HomePageSearch(){
                         </div>
                     </section>
                     <div className="SubmitButtonContainer">
-                        <button>Submit</button>
+                        <button type="submit">Submit</button>
                     </div>
                 </form>
             </div>
