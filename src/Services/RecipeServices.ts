@@ -1,4 +1,4 @@
-import { Hit, Query } from '../Model/ItemInterface'
+import { Hit } from '../Model/ItemInterface'
 import axios from "axios";
 import { QueryParams } from '../Context/ItemContextProvider';
 
@@ -43,18 +43,4 @@ export const fetchAllRecipes = (fetchParams: QueryParams): Promise<Hit[]> => {
     })
 }
 
-// narrows data down to recipe objects
-// export const fetchRecipe = (query: string = "") => {
-//     return axios.get(RecipeAPIUrlAll, {
-//             params: {
-//                 app_id: id,
-//                 app_key: key,
-//                 q: query,
-//                 type: "public"
-//             }
-    
-//         }).then((response) => {
-//         return response.data.hits
-//     })
-// }
 

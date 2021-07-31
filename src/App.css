@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 /* Globals */
 *{
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   color: black;
 }
 
@@ -12,7 +14,8 @@ body {
 }
 
 h1 {
-  
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem;
 }
 
 h2 {

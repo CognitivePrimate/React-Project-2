@@ -19,9 +19,6 @@ function HomePageSearch(){
     const [glutenFree, setGlutenFree] = useState(false);
 
 
-
-    const handleSubmit = () => {
-
     function handleSubmit(e: FormEvent){
         e.preventDefault();
         // search data is a string
