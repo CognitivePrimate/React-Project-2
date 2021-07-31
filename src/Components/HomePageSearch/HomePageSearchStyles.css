@@ -1,16 +1,44 @@
+/* 
+
+Color Schem Ideas
+
+1.
+
+orange  #F6BD60
+lightest peach #f7ede2
+2nd lightest peach #F5CAC3
+light green #84A59D
+reddish pink #F28482
+
+2.
+
+
+
+*/
+
 div.SearchContainer {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin: 10px 10px 30px 10px;
 }
+
+/* Global color styling */
+
+div.SearchContainer label.fontLabels {
+    color: #A8293C;
+}
+
+
 /*  conatiner styling */
 
 div.SearchContainer div.FormContainer {
     border-style: solid;
-    border-color: black;
+    border-color: #8E7A3D;
     border-width: 2px;
     padding: 20px;
-    background-color: rgb(204, 204, 204);
+    background-color: #D7B957;
+    border-radius: 15px;
 }
 
 div.SearchContainer div.SearchOptionsContainer {
@@ -28,6 +56,15 @@ div.SearchContainer section.SearchOptionSection {
     flex-direction: column;
 }
 
+div.SearchContainer h3.fontTitles {
+    color: #582E44;
+}
+
+
+
+
 /*  buttons and inputs */
 
-
+div.SearchContainer label.searchLabel {
+    margin: 0 5px;
+}

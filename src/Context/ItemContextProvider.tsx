@@ -5,7 +5,7 @@ import { fetchAllRecipes } from "../Services/RecipeServices";
 export interface QueryParams {
     q: string;
     calories?: number;
-    glutenFree?: number
+    gluten?: string
 }
 
 export interface ItemContextModel {
@@ -45,9 +45,16 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // ^ 
 
     // TEST
-    const fetchRecipes = (query: Query): void => {
+    const fetchRecipes = ({query, gluten}: Query): void => {
+        let glutenOption = "";
+        if (gluten){
+            glutenOption = "Gluten-Free"
+        } else {
+            glutenOption = "";
+        }
         const parameters: QueryParams = {
-            q: query.query
+            q: query,
+            gluten: glutenOption
         }
         console.log(parameters);
         // Real STUFF FROM KYLE 

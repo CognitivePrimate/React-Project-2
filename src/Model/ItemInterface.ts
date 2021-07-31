@@ -18,5 +18,6 @@ export interface Hit {
 
 export interface Query {
     query: string;
-    calories?: number
+    calories?: number;
+    gluten?: boolean
 }
