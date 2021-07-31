@@ -25,7 +25,7 @@ function HomePageSearch(){
 
 // attempt 1
         console.log(searchData);
-        fetchRecipes({search: searchData})
+        fetchRecipes({query: searchData})
 
 
 // attempt 2

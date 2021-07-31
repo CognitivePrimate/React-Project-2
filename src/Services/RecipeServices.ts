@@ -1,4 +1,6 @@
+import { Hit, Query } from '../Model/ItemInterface'
 import axios from "axios";
+import { QueryParams } from '../Context/ItemContextProvider';
 
 // access API
 const RecipeAPIUrlAll: string = "https://api.edamam.com/api/recipes/v2";
@@ -15,15 +17,15 @@ interface Params {
     app_key: string | undefined;
     q: string;
     type: string;
-    calories?: string;
+    calories?: number;
 }
 
 // grabs all data
-export const fetchAllRecipes = (fetchParams: any) => {
+export const fetchAllRecipes = (fetchParams: QueryParams): Promise<Hit[]> => {
     const parameters: Params = {
         app_id: id,
         app_key: key,
-        q: fetchParams.query,
+        q: fetchParams.q,
         type: "public"
     }
     // FAKE STUFF FROM KYLE
