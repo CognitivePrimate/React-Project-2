@@ -1,11 +1,11 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { Item, Hit } from "../Model/ItemInterface";
+import { Item, Hit, Query } from "../Model/ItemInterface";
 import { fetchAllRecipes } from "../Services/RecipeServices";
 
-interface QueryParams {
+export interface QueryParams {
     q: string;
     calories?: number;
-    glutenFree?: number
+    gluten?: string
 }
 
 export interface ItemContextModel {
@@ -13,7 +13,7 @@ export interface ItemContextModel {
     favorites: Item[];
     addFavorite: (item: Item) => void;
     removeFavorite: (index: number) => void;
-    fetchRecipes: (query: any) => void;
+    fetchRecipes: (query: Query) => void;
 }
 
 const defaultValue: ItemContextModel = {
@@ -34,21 +34,30 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     const [favorites, setFavorites] = useState<Item[]>([]);
     // TEST
     useEffect(() => {
-        fetchAllRecipes({query: "chicken"}).then((data) => {
+        fetchAllRecipes({q: "chicken"}).then((data) => {
             setItems(data)
         })
     },[])
 
+    /// potential change in code to not do if statements over and over for each key.
+
+    // calories: query.calories || undefined,
+    // ^ 
+
     // TEST
-    const fetchRecipes = (query: any): void => {
+    const fetchRecipes = ({query, gluten}: Query): void => {
+        let glutenOption = "";
+        if (gluten){
+            glutenOption = "Gluten-Free"
+        } else {
+            glutenOption = "";
+        }
         const parameters: QueryParams = {
-            q: query
+            q: query,
+            gluten: glutenOption
         }
         console.log(parameters);
-        // Real STUFF FROM KYLE
-        if (query.calories) {
-            parameters.calories = query.calories;
-        }
+        // Real STUFF FROM KYLE 
         console.log(parameters.q)
         fetchAllRecipes(parameters).then((data) => {
             console.log("data:", data)

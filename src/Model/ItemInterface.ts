@@ -16,7 +16,8 @@ export interface Hit {
     recipe: Item;
 } 
 
-// export interface Search {
-//     q: string;
-//     glutenFree: 
-// }
+export interface Query {
+    query: string;
+    calories?: number;
+    gluten?: boolean
+}
