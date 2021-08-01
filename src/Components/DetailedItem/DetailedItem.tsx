@@ -7,7 +7,7 @@ import {Hit} from "../../Model/ItemInterface";
 import "./DetailedItemStyles.css";
 
 // import icons
-import favoriteIcon from "../../Icons/to-favorite.svg";
+import tofavoriteIcon from "../../Icons/to-favorite.svg";
 import favoritedIcon from "../../Icons/favorited.svg";
 
 interface RouteParams {
@@ -20,29 +20,46 @@ function DetailedItem(){
     const {label} = useParams<RouteParams>();
 
     // for handling icon display
-    const [icon, setIcon] = useState(favoriteIcon);
+    const [icon, setIcon] = useState(tofavoriteIcon);
 
     // displays the item chosen from initial search page based on a name (label) match
     const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
     console.log("found item:", foundItem);
 
     //  handle adding/removing favorites
-     const handleFavorites = () => {
-        if (foundItem){
-            // need to figure out index for here?
-            for (const favorite of favorites) {
-
-            } 
+    const handleRemoveFavorite = (index: number) => removeFavorite;
+       
+    const handleFavorites = () => {
+        let index = 0;
+        if (foundItem?.recipe){
+            
+            // if recipe is favorited, will unfavorite and vice versa
             foundItem.recipe.favorite = !foundItem.recipe.favorite;
-            foundItem.recipe.favorite ? setIcon(favoriteIcon) : setIcon(favoritedIcon);
-            console.log(icon);
-            // foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : removeFavorite(index);
-
+            console.log("favorite", foundItem.recipe.favorite);
+            // if recipe is favorited icon sets to favorited
+            foundItem.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
+            console.log("image", icon);
+            
+            
+            // to get index for removal from favorites --- IS THIS BEST WAY? ASK KYLE
+            for (const favorite of favorites) {
+                index++;
+                // favorite.label === favorite.label ? break : continue;
+                if  (favorite.label === favorite.label) {
+                    console.log("index", index);
+                    break;
+                } else {
+                    continue;
+                }
+            }
+            
+            foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : handleRemoveFavorite(index);
+            console.log("favorites:", favorites);
         }
     }
     
     // image variable
-    let background = `${foundItem?.recipe.image}`
+    let background = `${foundItem?.recipe.image}`;
 
     
     
@@ -103,8 +120,6 @@ function DetailedItem(){
         </div>
     )
 }
-    
-    // url: string;
     // favorite: boolean;
 
 
