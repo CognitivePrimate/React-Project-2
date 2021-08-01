@@ -1,6 +1,7 @@
 import { Hit } from '../Model/ItemInterface'
 import axios from "axios";
 import { QueryParams } from '../Context/ItemContextProvider';
+import { stringify } from 'qs';
 
 // access API
 const RecipeAPIUrlAll: string = "https://api.edamam.com/api/recipes/v2";
@@ -19,6 +20,7 @@ interface Params {
     q: string;
     type: string;
     calories?: number;
+    health?: string[]
 }
 
 // grabs all data
@@ -27,17 +29,21 @@ export const fetchAllRecipes = (fetchParams: QueryParams): Promise<Hit[]> => {
         app_id: id,
         app_key: key,
         q: fetchParams.q,
-        type: "public"
+        type: "public",
+        health: fetchParams.health,
+        calories: fetchParams.calories
     }
     // FAKE STUFF FROM KYLE
-    if (fetchParams.calories) {
-        parameters.calories = fetchParams.calories;
-    }
+    // if (fetchParams.calories) {
+    //     parameters.calories = fetchParams.calories;
+    // }
     // FAKE STUFF FROM KYLE
 
 
     return axios.get(RecipeAPIUrlAll, {
-        params: parameters
+        params: parameters, 
+        // paramsSerializer: JSON.stringify
+        paramsSerializer: (params) => stringify(params, {indices: false})
     }).then((response) => {
         return response.data.hits
     })

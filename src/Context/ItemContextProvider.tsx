@@ -5,15 +5,23 @@ import { fetchAllRecipes } from "../Services/RecipeServices";
 export interface QueryParams {
     q: string;
     calories?: number;
-    gluten?: string
+    health?: string[];
 }
+
+export interface HealthOptionsState {
+    gluten?: boolean | undefined;
+}
+
+// export interface HealthOptionsSearch {
+//     gluten?: string;
+// }
 
 export interface ItemContextModel {
     items: Hit[];
     favorites: Item[];
     addFavorite: (item: Item) => void;
     removeFavorite: (index: number) => void;
-    fetchRecipes: (query: Query) => void;
+    fetchRecipes: ({query, health}: Query) => void;
 }
 
 const defaultValue: ItemContextModel = {
@@ -45,20 +53,25 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // ^ 
 
     // TEST
-    const fetchRecipes = ({query, gluten}: Query): void => {
+    const fetchRecipes = ({query, health}: Query): void => {
         let glutenOption = "";
-        if (gluten){
-            glutenOption = "Gluten-Free"
+        console.log(health);
+        if (health?.gluten){
+            glutenOption = "gluten-free"
         } else {
             glutenOption = "";
         }
+    
         const parameters: QueryParams = {
             q: query,
-            gluten: glutenOption
+            calories: 200,
+            health: [glutenOption]
         }
+
         console.log(parameters);
-        // Real STUFF FROM KYLE 
-        console.log(parameters.q)
+        console.log(parameters.q);
+        console.log(parameters.health);
+        console.log(parameters.calories);
         fetchAllRecipes(parameters).then((data) => {
             console.log("data:", data)
             setItems(data);

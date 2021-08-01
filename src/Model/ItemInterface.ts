@@ -1,3 +1,5 @@
+import { HealthOptionsState } from "../Context/ItemContextProvider";
+
 // blueprint for individual recipe searched and returned item or items
 export interface Item {
     label: string;
@@ -19,5 +21,5 @@ export interface Hit {
 export interface Query {
     query: string;
     calories?: number;
-    gluten?: boolean
+    health?: HealthOptionsState
 }

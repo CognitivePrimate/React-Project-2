@@ -11,7 +11,7 @@ function Header() {
 
 
         <header className="Header">
-            <Link to="/" ><h1>Chonk Watchers</h1></Link>
+            <Link to="/"><h1 className="">Chonk Watchers</h1></Link>
 
             <div className="Nav">
                 <nav>
