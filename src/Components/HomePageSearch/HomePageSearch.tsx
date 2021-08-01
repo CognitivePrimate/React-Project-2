@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import { fetchAllRecipes } from "../../Services/RecipeServices";
 import './HomePageSearchStyles.css';
 
@@ -8,55 +8,59 @@ import {Item} from "../../Model/ItemInterface";
 import { ItemContext } from "../../Context/ItemContextProvider";
 
 
+// interface Props {
+//     onSubmit: () => void;
+// }
 
 function HomePageSearch(){
     const {items, favorites, fetchRecipes, addFavorite, removeFavorite} = useContext(ItemContext);
     
-    // TEST
-    // const [recipes, setRecipes] = useState<Item[]>(items);
-    // TEST
-    const [search, setSearch] = useState({
-        query:'test'
-    })
+    const [searchData, setSearchData] = useState('')
+    const [glutenFree, setGlutenFree] = useState(false);
 
-    
 
-    const handleSubmit = () => {
-        // prevent default
-        // on submit, get value entered
-        // set parameters variable as an object && add params into this function (not as interface)
-        // only needs actual search parameters ^^
-        // push results into Params object
-        // conditionally add k/v pairs (not required) to narrow down Params object
-        // make new request to fetch recipe --- use fetch recipe callback but pass Params object
+    function handleSubmit(e: FormEvent){
+        e.preventDefault();
+        // search data is a string
+        console.log(searchData);
+        // query is type Query
+        fetchRecipes({query: searchData, gluten: glutenFree})
     }
 
-    
+    // when hitting the checkbox, start as false, when clicked, change to the opposite (true).
+    function glutenCheck(){
+        setGlutenFree(!glutenFree);
+        console.log(glutenFree);
+    }
+
+
     console.log("items:", items);
+    console.log(searchData);
 
     return (
         <div className="SearchContainer">
         <h3>Home Page Search Component</h3>
             <div className="FormContainer">
-                <form action="#">
-                    <h3>What are ya lookin' for?</h3>
-                    <div>
-                        <label htmlFor="search">Search</label>
-                        <input type="text" name="search" id="search" placeholder="grabby paws" />
-                    </div>
-                    <div className="SearchOptionsContainer">
-                        <label htmlFor="gluten-free">Gluten Free</label>
-                        <input type="checkbox" id="gluten-free" name="health-labels" value="gluten-free"/>
-                        <label htmlFor="vegetarian">Vegetarian</label>
-                        <input type="checkbox" id="vegetarian" name="health-labels" value="vegetarian"/>
-                    </div>
+                <form action="submit" onSubmit={handleSubmit}>
+                    <h3 className="fontTitles">What are ya lookin' for?</h3>
+                    <section className="SearchOptionSection">
+                        <div className="SearchOptionsContainer">
+                            <label className="fontLabels" htmlFor="gluten-free">Gluten Free</label>
+                            <input type="checkbox" id="gluten-free" name="health-labels" value="gluten-free" checked={glutenFree} onClick={glutenCheck}/>
+                            <label className="fontLabels" htmlFor="vegetarian">Vegetarian</label>
+                            <input type="checkbox" id="vegetarian" name="health-labels" value="vegetarian"/>
+                        </div>
+                        <div>
+                            <label className="searchLabel fontLabels" htmlFor="search">Search</label>
+                            <input type="text" name="search" id="search" value={searchData} onChange={ (e) => setSearchData(e.target.value) }/>
+                        </div>
+                    </section>
                     <div className="SubmitButtonContainer">
-                        <button>Submit</button>
+                        <button type="submit">Submit</button>
                     </div>
                 </form>
             </div>
             <section className="SearchResultsContainer">
-                <p>{search.query}</p>
             </section>
         </div>
     )

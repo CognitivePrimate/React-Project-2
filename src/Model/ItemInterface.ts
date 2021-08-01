@@ -15,3 +15,9 @@ export interface Item {
 export interface Hit {
     recipe: Item;
 } 
+
+export interface Query {
+    query: string;
+    calories?: number;
+    gluten?: boolean
+}

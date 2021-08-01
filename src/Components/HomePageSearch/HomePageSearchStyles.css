@@ -1,21 +1,21 @@
 
 div.SearchContainer {
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
     align-items: center;
     display: flex;
     flex-direction: column;
     
 }
+
+
 /*  conatiner styling */
 
 div.SearchContainer div.FormContainer {
     border-style: solid;
-    border-color: black;
+    border-color: #8E7A3D;
     border-width: 2px;
     padding: 20px;
-    background-color: rgb(204, 204, 204);
+    background-color: #D7B957;
+    border-radius: 15px;
 }
 
 div.SearchContainer div.SearchOptionsContainer {
@@ -28,8 +28,14 @@ div.SearchContainer div.SubmitButtonContainer {
     justify-content: center;
 }
 
-/*  buttons and inputs */
+div.SearchContainer section.SearchOptionSection {
+    display: flex;
+    flex-direction: column;
+}
 
+div.SearchContainer h3.fontTitles {
+    color: #582E44;
+}
 
 
 

@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { VscHeart } from 'react-icons/vsc';
 
+import "../../App.css";
 
 function Header() {
 
