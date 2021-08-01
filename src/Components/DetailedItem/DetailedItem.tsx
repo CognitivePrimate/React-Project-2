@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ItemContext } from "../../Context/ItemContextProvider";
 import {Hit} from "../../Model/ItemInterface";
@@ -7,8 +7,8 @@ import {Hit} from "../../Model/ItemInterface";
 import "./DetailedItemStyles.css";
 
 // import icons
-import favorite from "../../Icons/to-favorite.svg";
-import favorited from "../../Icons/favorited.svg";
+import favoriteIcon from "../../Icons/to-favorite.svg";
+import favoritedIcon from "../../Icons/favorited.svg";
 
 interface RouteParams {
     label: string
@@ -16,22 +16,35 @@ interface RouteParams {
 
 function DetailedItem(){
     // instantiate context
-    const {items, addFavorite, removeFavorite} = useContext(ItemContext);
+    const {items, addFavorite, removeFavorite, favorites} = useContext(ItemContext);
     const {label} = useParams<RouteParams>();
+
+    // for handling icon display
+    const [icon, setIcon] = useState(favoriteIcon);
 
     // displays the item chosen from initial search page based on a name (label) match
     const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
     console.log("found item:", foundItem);
 
-     // handle adding/removing favorites
+    //  handle adding/removing favorites
      const handleFavorites = () => {
         if (foundItem){
+            // need to figure out index for here?
+            for (const favorite of favorites) {
+
+            } 
             foundItem.recipe.favorite = !foundItem.recipe.favorite;
+            foundItem.recipe.favorite ? setIcon(favoriteIcon) : setIcon(favoritedIcon);
+            // foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : removeFavorite(index);
+
         }
     }
     
     // image variable
     let background = `${foundItem?.recipe.image}`
+
+    
+    
 
     // changing hyphenated healthLabels from API to spaces instead
     const healthLabel: string[] | undefined = foundItem?.recipe.healthLabels;
@@ -43,7 +56,6 @@ function DetailedItem(){
     // variable for button click to take user to actual recipe page externally
     const link: string = foundItem ? foundItem.recipe.url : "";
         console.log("link", link);
-    
 
     return (
         <div className="DetailedItemWrapperImage" style={{backgroundImage: `url(${background})`}}>
@@ -83,7 +95,7 @@ function DetailedItem(){
                 </div>
                 <div className="DetailedItemFooter">
                     <Link className="DetailedRecipeButton" target="blank" to={link}>Recipe</Link>
-                    <img className="DetailedItemfavoriteIcon" src={favorite} alt="favorite-icon"/>
+                    <img className="DetailedItemfavoriteIcon" src={icon} alt="favorite-icon" onClick={handleFavorites}/>
                 </div>
             </div>
             {/* <div className="Reflection" style={{backgroundImage: `url(${background})`}}></div> */}

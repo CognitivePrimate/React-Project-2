@@ -5,12 +5,11 @@ header {
 
 header :link {
     text-decoration: none;
-    color: red;
+    /* color: red; */
 }
 
 h1 {
-    color: black;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    /* color: black; */
 }
 
 ul {
