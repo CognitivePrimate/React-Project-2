@@ -59,7 +59,6 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     
         const parameters: QueryParams = {
             q: query,
-            calories: 200,
             health: [glutenOption]
         }
 

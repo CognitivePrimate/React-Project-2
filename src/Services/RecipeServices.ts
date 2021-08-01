@@ -33,16 +33,10 @@ export const fetchAllRecipes = (fetchParams: QueryParams): Promise<Hit[]> => {
         health: fetchParams.health,
         calories: fetchParams.calories
     }
-    // FAKE STUFF FROM KYLE
-    // if (fetchParams.calories) {
-    //     parameters.calories = fetchParams.calories;
-    // }
-    // FAKE STUFF FROM KYLE
 
 
     return axios.get(RecipeAPIUrlAll, {
         params: parameters, 
-        // paramsSerializer: JSON.stringify
         paramsSerializer: (params) => stringify(params, {indices: false})
     }).then((response) => {
         return response.data.hits
