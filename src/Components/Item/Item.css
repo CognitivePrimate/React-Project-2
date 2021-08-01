@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .ItemWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px 2px (0 0 0 0.5);
+}
+
+.ItemImage{
+    width: 75%;
     
 }

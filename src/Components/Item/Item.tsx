@@ -14,14 +14,19 @@ const ItemComponent = ({item}: Props) => {
 
     return (
         <Link className="ItemWrapper" to="/DetailedItem">
-            <p>some weird shit is happening</p>
             <div className="ItemWrapperLeft">
                 <h3>{item.label}</h3>
-                <img src={item.image} alt="food-pic"/>
+                <img className="ItemImage" src={item.image} alt="food-pic"/>
             </div>
             <div className="ItemWrapperRight">
-                <p>Servings: <div className="numberBubble">{item.yield}</div></p>
-                <p>Calories: <div className="numberBubble">{item.calories}</div></p>
+                <div>
+                    <p>Servings:</p>
+                    <div className="numberBubble">{item.yield}</div>
+                </div>
+                <div>
+                    <p>Calories:</p>
+                    <div className="numberBubble">{item.calories}</div>
+                </div>
             </div>
         </Link>
     )

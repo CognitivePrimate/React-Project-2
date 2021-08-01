@@ -12,6 +12,10 @@ function App() {
       <Header/>
       <ItemContextProvider>
         <HomePageSearch/>
+        
+      </ItemContextProvider>
+      <ItemContextProvider>
+        <FoundItems />
       </ItemContextProvider>
         
         
