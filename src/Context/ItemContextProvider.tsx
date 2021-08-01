@@ -46,12 +46,7 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
             setItems(data)
         })
     },[])
-
-    /// potential change in code to not do if statements over and over for each key.
-
-    // calories: query.calories || undefined,
-    // ^ 
-
+    
     // TEST
     const fetchRecipes = ({query, health}: Query): void => {
         let glutenOption = "";

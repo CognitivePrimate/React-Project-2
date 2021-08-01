@@ -44,6 +44,7 @@ function HomePageSearch(){
 
     return (
         <div className="SearchContainer">
+        <h3>Home Page Search Component</h3>
             <div className="FormContainer">
                 <form action="submit" onSubmit={handleSubmit}>
                     <h3 className="fontTitles">What are ya lookin' for?</h3>

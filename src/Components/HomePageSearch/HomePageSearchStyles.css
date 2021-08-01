@@ -1,32 +1,9 @@
-/* 
-
-Color Schem Ideas
-
-1.
-
-orange  #F6BD60
-lightest peach #f7ede2
-2nd lightest peach #F5CAC3
-light green #84A59D
-reddish pink #F28482
-
-2.
-
-
-
-*/
 
 div.SearchContainer {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 10px 10px 30px 10px;
-}
-
-/* Global color styling */
-
-div.SearchContainer label.fontLabels {
-    color: #A8293C;
+    
 }
 
 
@@ -62,9 +39,3 @@ div.SearchContainer h3.fontTitles {
 
 
 
-
-/*  buttons and inputs */
-
-div.SearchContainer label.searchLabel {
-    margin: 0 5px;
-}
