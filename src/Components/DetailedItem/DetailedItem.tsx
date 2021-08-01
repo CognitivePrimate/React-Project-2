@@ -35,6 +35,7 @@ function DetailedItem(){
             } 
             foundItem.recipe.favorite = !foundItem.recipe.favorite;
             foundItem.recipe.favorite ? setIcon(favoriteIcon) : setIcon(favoritedIcon);
+            console.log(icon);
             // foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : removeFavorite(index);
 
         }
