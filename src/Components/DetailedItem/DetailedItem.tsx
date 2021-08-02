@@ -30,34 +30,34 @@ function DetailedItem(){
     const handleRemoveFavorite = (index: number) => removeFavorite;
        
     const handleFavorites = () => {
-        let index = 0;
+        console.log("in handleFavorites");
+        let index = -1;
         if (foundItem?.recipe){
-            
+            console.log("in If statement in handleFavorites");
             // if recipe is favorited, will unfavorite and vice versa
             foundItem.recipe.favorite = !foundItem.recipe.favorite;
             console.log("favorite", foundItem.recipe.favorite);
             // if recipe is favorited icon sets to favorited
             foundItem.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
             console.log("image", icon);
-            
+            // to add item to favorites
+            foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : handleRemoveFavorite(index);
             
             // to get index for removal from favorites --- IS THIS BEST WAY? ASK KYLE
-            for (const favorite of favorites) {
-                index++;
-                // favorite.label === favorite.label ? break : continue;
-                if  (favorite.label === favorite.label) {
-                    console.log("index", index);
-                    break;
-                } else {
-                    continue;
-                }
-            }
-            
-            foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : handleRemoveFavorite(index);
+            // for (const favorite of favorites) {
+            //     // favorite.label === favorite.label ? break : continue;
+            //     if  (favorite.label === favorite.label) {
+            //         index++;
+            //         console.log("index", index);
+            //         break;
+            //     } else {
+            //         continue;
+            //     }
+            // }
             console.log("favorites:", favorites);
         }
     }
-    
+
     // image variable
     let background = `${foundItem?.recipe.image}`;
 

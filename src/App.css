@@ -26,7 +26,8 @@ body {
 h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.5rem;
-  color :#582E44;
+  /* color :#582E44; */
+  color: #351C2A;
 }
 
 h2 {

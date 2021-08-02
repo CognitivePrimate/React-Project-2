@@ -74,8 +74,8 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // TEST
     // to be added to favorites section dependant on function call by click
     const addFavorite = (item: Item): void => {
-        setFavorites(prevFavorites => [
-            ...prevFavorites,
+        setFavorites([
+            ...favorites,
             item
         ])
     }
@@ -87,7 +87,7 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
             ...prevFavorites.slice(index + 1)
         ]);
     }
-
+  
     return (<ItemContext.Provider value={ {items, favorites, fetchRecipes, addFavorite, removeFavorite} }>
                 {children}
             </ItemContext.Provider>)
