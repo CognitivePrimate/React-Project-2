@@ -5,6 +5,10 @@
   font-family: Merriweather;
 }
 
+a {
+  color: black;
+}
+
 
 body {
   /* padding: 20px; */

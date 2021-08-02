@@ -16,8 +16,8 @@ function Header() {
             <div className="Nav">
                 <nav>
                     <ul>
-                        <li>
-                            <NavLink to="/favorite">Favorites <VscHeart /></NavLink>
+                        <li className="HeaderLink">
+                            <NavLink  to="/favorite">Favorites <VscHeart /></NavLink>
                         </li>
                     </ul>
                 </nav>
