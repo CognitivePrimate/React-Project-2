@@ -12,10 +12,12 @@ div.SearchContainer {
 div.SearchContainer div.FormContainer {
     border-style: solid;
     border-color: #8E7A3D;
-    border-width: 2px;
+    border-width: 1px;
     padding: 20px;
     background-color: #D7B957;
     border-radius: 15px;
+    margin: 15vh auto 5px auto;
+    box-shadow: 1px 1px 8px 1px rgba(55, 50, 62, .5);
 }
 
 div.SearchContainer div.SearchOptionsContainer {
@@ -35,6 +37,22 @@ div.SearchContainer section.SearchOptionSection {
 
 div.SearchContainer h3.fontTitles {
     color: #582E44;
+}
+
+.SubmitButton {
+    background: #582E44;
+    color: #FFFBDB;
+    margin: 5px auto 0 auto;
+    width: 80%;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+input {
+    background: #FFFBDB;
+    border: none;
+    border-radius: 15px;
 }
 
 

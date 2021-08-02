@@ -44,7 +44,6 @@ function HomePageSearch(){
 
     return (
         <div className="SearchContainer">
-        <h3>Home Page Search Component</h3>
             <div className="FormContainer">
                 <form action="submit" onSubmit={handleSubmit}>
                     <h3 className="fontTitles">What are ya lookin' for?</h3>
@@ -56,12 +55,12 @@ function HomePageSearch(){
                             <input type="checkbox" id="vegetarian" name="health-labels" value="vegetarian"/>
                         </div>
                         <div>
-                            <label className="searchLabel fontLabels" htmlFor="search">Search</label>
+                            <label className="searchLabel fontLabels" htmlFor="search">Search:</label>
                             <input type="text" name="search" id="search" value={searchData} onChange={ (e) => setSearchData(e.target.value) }/>
                         </div>
                     </section>
                     <div className="SubmitButtonContainer">
-                        <button type="submit">Submit</button>
+                        <button className="SubmitButton"type="submit">Submit</button>
                     </div>
                 </form>
             </div>

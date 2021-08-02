@@ -5,23 +5,22 @@
     display:flex;
     justify-content:space-between;
     align-items: center;
-    box-shadow: 1px 1px 2px 5px rgba(0 0 0 0.5);
-
+    box-shadow: 1px 1px 8px 1px rgba(55, 50, 62, .5);
+    background: rgba(193, 145, 161, 0.8);
+    backdrop-filter: blur(1rem);
+    position: fixed;
+    top: 0;
+    
 }
 
-header :link {
+.Header :link {
     text-decoration: none;
-    color: red;
+    color: #582E44;
     font-family: merriweather;
     font-size: 1rem;
     font-weight: bold;
 }
 
-h1 {
-    color: black;
-    /* font-family: fantasy; */
-    font-size: 2rem;
-}
 
 .HeaderLink {
     list-style: none;
