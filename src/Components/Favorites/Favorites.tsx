@@ -4,22 +4,28 @@ import Item from "../Item/Item";
 
 
 function Favorites(){
-    const {items, favorites} = useContext(ItemContext);
+    const {favorites} = useContext(ItemContext);
     
     return (
         
         <div className="FavoritesWrapper">  
-        <ol>
-            {Favorites.map(favorites, index) => {
-                <li>{favorites.text}</li>
-            }
+        <ul>
+            {favorites.map((favorite, index) => 
+                <li>{favorite.label}</li>
+            )}
             
-            </ol>
+        </ul>
         </div>
     )
 
 }
 
+// {items.map((item, index) => 
+//     <Item 
+//         key={`${item.recipe.label}-${index}`}
+//         item={item.recipe}
+//     />
+// )}
  
 
 export default Favorites;
