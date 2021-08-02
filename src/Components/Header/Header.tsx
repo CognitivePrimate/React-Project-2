@@ -11,13 +11,13 @@ function Header() {
 
 
         <header className="Header">
-            <Link to="/" ><h1>What's Cooking Tonight?</h1></Link>
+            <Link to="/"><h1 className="">Chonk Watchers</h1></Link>
 
             <div className="Nav">
                 <nav>
                     <ul>
-                        <li>
-                            <NavLink to="/favorite">Favorites <VscHeart /></NavLink>
+                        <li className="HeaderLink">
+                            <NavLink  to="/favorite">Favorites <VscHeart /></NavLink>
                         </li>
                     </ul>
                 </nav>

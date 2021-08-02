@@ -16,7 +16,11 @@ function HomePageSearch(){
     const {items, favorites, fetchRecipes, addFavorite, removeFavorite} = useContext(ItemContext);
     
     const [searchData, setSearchData] = useState('')
-    const [glutenFree, setGlutenFree] = useState(false);
+    const [healthOptions, setHealthOptions] = useState(
+        {
+        gluten: false
+        }
+    );
 
 
     function handleSubmit(e: FormEvent){
@@ -24,13 +28,14 @@ function HomePageSearch(){
         // search data is a string
         console.log(searchData);
         // query is type Query
-        fetchRecipes({query: searchData, gluten: glutenFree})
+        fetchRecipes({query: searchData, health: healthOptions})
     }
 
     // when hitting the checkbox, start as false, when clicked, change to the opposite (true).
     function glutenCheck(){
-        setGlutenFree(!glutenFree);
-        console.log(glutenFree);
+        let glutenCheck = healthOptions.gluten;
+        setHealthOptions({gluten: !glutenCheck})
+        console.log(healthOptions.gluten);
     }
 
 
@@ -39,24 +44,23 @@ function HomePageSearch(){
 
     return (
         <div className="SearchContainer">
-        <h3>Home Page Search Component</h3>
             <div className="FormContainer">
                 <form action="submit" onSubmit={handleSubmit}>
                     <h3 className="fontTitles">What are ya lookin' for?</h3>
                     <section className="SearchOptionSection">
                         <div className="SearchOptionsContainer">
                             <label className="fontLabels" htmlFor="gluten-free">Gluten Free</label>
-                            <input type="checkbox" id="gluten-free" name="health-labels" value="gluten-free" checked={glutenFree} onClick={glutenCheck}/>
+                            <input type="checkbox" id="gluten-free" name="health-labels" value="gluten-free" checked={healthOptions.gluten} onClick={glutenCheck}/>
                             <label className="fontLabels" htmlFor="vegetarian">Vegetarian</label>
                             <input type="checkbox" id="vegetarian" name="health-labels" value="vegetarian"/>
                         </div>
                         <div>
-                            <label className="searchLabel fontLabels" htmlFor="search">Search</label>
+                            <label className="searchLabel fontLabels" htmlFor="search">Search:</label>
                             <input type="text" name="search" id="search" value={searchData} onChange={ (e) => setSearchData(e.target.value) }/>
                         </div>
                     </section>
                     <div className="SubmitButtonContainer">
-                        <button type="submit">Submit</button>
+                        <button className="SubmitButton"type="submit">Submit</button>
                     </div>
                 </form>
             </div>

@@ -1,30 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Permanent+Marker&family=Tangerine:wght@700&display=swap');
 
+
+/* light: #FFFBDB
+  Black Coffee --Shadows / deep: #37323E
+  Old Gold --Search Box Gold: #D7B957
+  Puce --Muted Purple: #C191A1
+  Bright/Pop: #DD1155 */
+  /*Purple Mountain Majest --  Button? : #8D80Ad */
 *{
   box-sizing: border-box;
   font-family: Merriweather;
+  color: #37323E;
+}
+
+a {
+  color: rgb(55, 50, 62) ;
 }
 
 
 body {
   /* padding: 20px; */
+  background: #FFFBDB;
 }
 
 h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.5rem;
+  color :#582E44;
 }
 
 h2 {
-
+  color :#582E44;
 }
 
 h3 {
-
+  color :#582E44;
 }
 
 h4 {
-
+  color :#582E44;
 }
 
 
