@@ -7,15 +7,15 @@ function Favorites(){
     const {items, favorites} = useContext(ItemContext);
     
     return (
-        
-        <div className="FavoritesWrapper">  
-        <ol>
-            {Favorites.map(favorites, index) => {
-                <li>{favorites.text}</li>
-            }
+        <p>FAVORITES ROUTE TEST</p>
+        // <div className="FavoritesWrapper">  
+        // <ol>
+        //     {Favorites.map(favorites, index) => {
+        //         <li>{favorites.text}</li>
+        //     }
             
-            </ol>
-        </div>
+        //     </ol>
+        // </div>
     )
 
 }
@@ -26,7 +26,7 @@ export default Favorites;
 
  
 
-function index(favorites: import("../../Model/ItemInterface").Item[], index: any): string | number | boolean | {} | import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>> | import("react").ReactNodeArray | import("react").ReactPortal | null | undefined {
-    throw new Error("Function not implemented.");
-}
+// function index(favorites: import("../../Model/ItemInterface").Item[], index: any): string | number | boolean | {} | import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>> | import("react").ReactNodeArray | import("react").ReactPortal | null | undefined {
+//     throw new Error("Function not implemented.");
+// }
 

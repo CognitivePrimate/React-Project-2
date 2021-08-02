@@ -47,6 +47,13 @@ div.SearchContainer h3.fontTitles {
     border: none;
     border-radius: 15px;
     padding: 5px;
+    box-shadow: .5px .5px 4px 1px rgba(55, 50, 62, .5);
+    transition: all 0.3s;
+}
+
+.SubmitButton:hover {
+    background: rgba(88, 46, 68, 0.95);
+    box-shadow: .25px .25px 2px .5px rgba(55, 50, 62, .5);
 }
 
 input {
