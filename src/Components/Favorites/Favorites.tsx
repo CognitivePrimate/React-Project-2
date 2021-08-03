@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ItemContext } from "../../Context/ItemContextProvider";
-import Item from "../Item/Item";
 
 
 function Favorites(){
