@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ItemContext } from "../../Context/ItemContextProvider";
-import {Hit} from "../../Model/ItemInterface";
+import {Hit, Item} from "../../Model/ItemInterface";
 
 // css
 import "./DetailedItemStyles.css";
@@ -30,34 +30,37 @@ function DetailedItem(){
     const handleRemoveFavorite = (index: number) => removeFavorite;
        
     const handleFavorites = () => {
-        let index = 0;
+        console.log("in handleFavorites");
+        let index = -1;
         if (foundItem?.recipe){
-            
+            console.log("in If statement in handleFavorites");
             // if recipe is favorited, will unfavorite and vice versa
             foundItem.recipe.favorite = !foundItem.recipe.favorite;
             console.log("favorite", foundItem.recipe.favorite);
             // if recipe is favorited icon sets to favorited
             foundItem.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
             console.log("image", icon);
+            // to add item to favorites
             
             
             // to get index for removal from favorites --- IS THIS BEST WAY? ASK KYLE
-            for (const favorite of favorites) {
-                index++;
-                // favorite.label === favorite.label ? break : continue;
-                if  (favorite.label === favorite.label) {
-                    console.log("index", index);
-                    break;
-                } else {
-                    continue;
-                }
-            }
-            
+            // for (const favorite of favorites) {
+            //     // favorite.label === favorite.label ? break : continue;
+            //     if  (favorite.label === favorite.label) {
+            //         index++;
+            //         console.log("index", index);
+            //         break;
+            //     } else {
+            //         continue;
+            //     }
+            // }
             foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : handleRemoveFavorite(index);
+            // foundItem.recipe.favorite ? setFavorites(foundItem.recipe) : handleRemoveFavorite(index);
+
             console.log("favorites:", favorites);
         }
     }
-    
+
     // image variable
     let background = `${foundItem?.recipe.image}`;
 
@@ -113,7 +116,7 @@ function DetailedItem(){
                 </div>
                 <div className="DetailedItemFooter">
                     <Link className="DetailedRecipeButton" target="blank" to={link}>Recipe</Link>
-                    <img className="DetailedItemfavoriteIcon" src={icon} alt="favorite-icon" onClick={handleFavorites}/>
+                    <img className="DetailedItemfavoriteIcon" src={icon} alt="favorite-icon" onClick={() => {handleFavorites()}}/>
                 </div>
             </div>
             {/* <div className="Reflection" style={{backgroundImage: `url(${background})`}}></div> */}
@@ -124,3 +127,4 @@ function DetailedItem(){
 
 
 export default DetailedItem;
+

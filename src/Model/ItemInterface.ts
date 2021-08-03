@@ -20,6 +20,6 @@ export interface Hit {
 
 export interface Query {
     query: string;
-    calories?: number;
+    calories?: string;
     health?: HealthOptionsState
 }

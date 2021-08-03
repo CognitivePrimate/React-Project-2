@@ -17,6 +17,12 @@ function Favorites(){
     )
 }
 
+// {items.map((item, index) => 
+//     <Item 
+//         key={`${item.recipe.label}-${index}`}
+//         item={item.recipe}
+//     />
+// )}
  
 
 export default Favorites;
