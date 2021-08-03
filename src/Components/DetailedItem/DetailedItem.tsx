@@ -40,23 +40,21 @@ function DetailedItem(){
             // if recipe is favorited icon sets to favorited
             foundItem.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
             console.log("image", icon);
-            // to add item to favorites
-            
             
             // to get index for removal from favorites --- IS THIS BEST WAY? ASK KYLE
-            // for (const favorite of favorites) {
-            //     // favorite.label === favorite.label ? break : continue;
-            //     if  (favorite.label === favorite.label) {
-            //         index++;
-            //         console.log("index", index);
-            //         break;
-            //     } else {
-            //         continue;
-            //     }
-            // }
+            for (const favorite of favorites) {
+                // favorite.label === favorite.label ? break : continue;
+                if  (foundItem.recipe.label === favorite.label) {
+                    index++;
+                    console.log("index", index);
+                    break;
+                } else {
+                    continue;
+                }
+            }
+            
+            // to add item to favorites
             foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : handleRemoveFavorite(index);
-            // foundItem.recipe.favorite ? setFavorites(foundItem.recipe) : handleRemoveFavorite(index);
-
             console.log("favorites:", favorites);
         }
     }

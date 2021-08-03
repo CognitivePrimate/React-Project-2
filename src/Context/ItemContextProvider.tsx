@@ -82,10 +82,9 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // TEST
     // to be added to favorites section dependant on function call by click
     const addFavorite = (item: Item): void => {
-        setFavorites(prevFavorites => [
-            ...prevFavorites,
-            item
-        ],)
+        let newFavorites: Item[] = favorites;
+        newFavorites.push(item);
+        setFavorites(newFavorites);
     }
 
     // remove from favorites
