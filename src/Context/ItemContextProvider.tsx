@@ -34,15 +34,8 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // set state and pass to children
     const [items, setItems] = useState<Hit[]>([]);
 
-<<<<<<< HEAD
-    // set favorites state and pass to children
-    const [favorites, setFavorites] = useState<Item[]>([]);
-
-    // TEST
-=======
     const [favorites, setFavorites] = useState<Item[]>([]);
  
->>>>>>> bca8883fcfc9ee2eb427c105ac2ad480480ab275
     useEffect(() => {
         fetchAllRecipes({q: "chicken"}).then((data) => {
             setItems(data)
@@ -89,10 +82,9 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // TEST
     // to be added to favorites section dependant on function call by click
     const addFavorite = (item: Item): void => {
-        setFavorites(prevFavorites => [
-            ...prevFavorites,
-            item
-        ],)
+        let newFavorites: Item[] = favorites;
+        newFavorites.push(item);
+        setFavorites(newFavorites);
     }
 
     // remove from favorites

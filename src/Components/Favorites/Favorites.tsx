@@ -5,7 +5,6 @@ import Item from "../Item/Item";
 
 function Favorites(){
     const {favorites} = useContext(ItemContext);
-    
     return (
         
         <div className="FavoritesWrapper">  
@@ -17,7 +16,6 @@ function Favorites(){
         </ul>
         </div>
     )
-
 }
 
 // {items.map((item, index) => 
