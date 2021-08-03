@@ -12,10 +12,6 @@ export interface HealthOptionsState {
     gluten?: boolean | undefined;
 }
 
-// export interface HealthOptionsSearch {
-//     gluten?: string;
-// }
-
 export interface ItemContextModel {
     items: Hit[];
     favorites: Item[];
@@ -38,18 +34,27 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // set state and pass to children
     const [items, setItems] = useState<Hit[]>([]);
 
+<<<<<<< HEAD
     // set favorites state and pass to children
     const [favorites, setFavorites] = useState<Item[]>([]);
 
     // TEST
+=======
+    const [favorites, setFavorites] = useState<Item[]>([]);
+ 
+>>>>>>> bca8883fcfc9ee2eb427c105ac2ad480480ab275
     useEffect(() => {
         fetchAllRecipes({q: "chicken"}).then((data) => {
             setItems(data)
         })
     },[])
     
-    // TEST
-    const fetchRecipes = ({query, health}: Query): void => {
+ 
+    const fetchRecipes = ({query, health, calories}: Query): void => {
+        
+        console.log(query)
+        console.log(calories);
+        // gluten option conversion
         let glutenOption = "";
         console.log(health);
         if (health?.gluten){
@@ -57,10 +62,19 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         } else {
             glutenOption = "";
         }
-    
+        // calorie count conversion from string to integer
+        let caloriesAmount = calories;
+
         const parameters: QueryParams = {
-            q: query,
-            health: [glutenOption]
+            q: query
+        }
+        
+
+        if (glutenOption){
+            parameters.health = [glutenOption]
+        }
+        if (caloriesAmount){
+            parameters.calories = parseInt(caloriesAmount);
         }
 
         console.log(parameters);
