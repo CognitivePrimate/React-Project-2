@@ -34,15 +34,8 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // set state and pass to children
     const [items, setItems] = useState<Hit[]>([]);
 
-<<<<<<< HEAD
-    // set favorites state and pass to children
-    const [favorites, setFavorites] = useState<Item[]>([]);
-
-    // TEST
-=======
     const [favorites, setFavorites] = useState<Item[]>([]);
  
->>>>>>> bca8883fcfc9ee2eb427c105ac2ad480480ab275
     useEffect(() => {
         fetchAllRecipes({q: "chicken"}).then((data) => {
             setItems(data)
