@@ -1,18 +1,20 @@
 import { useContext } from "react";
 import { ItemContext } from "../../Context/ItemContextProvider";
+import Item from "../Item/Item";
 
 
 function Favorites(){
     const {favorites} = useContext(ItemContext);
+    console.log(favorites);
     return (
         
         <div className="FavoritesWrapper">  
-        <ul>
-            {favorites.map((favorite, index) => 
-                <li>{favorite.label}</li>
+        {favorites.map((recipe, index) => 
+                <Item 
+                    key={`${recipe.label}-${index}`}
+                    item={recipe}
+                />
             )}
-            
-        </ul>
         </div>
     )
 }
