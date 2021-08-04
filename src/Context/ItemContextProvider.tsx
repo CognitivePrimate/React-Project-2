@@ -91,10 +91,18 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
 
     // remove from favorites
     const removeFavorite = (index: number): void => {
-        setFavorites(prevFavorites => [
-            ...prevFavorites.slice(0, index),
-            ...prevFavorites.slice(index + 1)
-        ]);
+        // setFavorites(prevFavorites => [
+        //     ...prevFavorites.slice(0, index),
+        //     ...prevFavorites.slice(index + 1)
+        // ]);
+        // TEST
+        let newFavorites: Item[] = favorites;
+        newFavorites.splice(index, 1);
+        setFavorites(newFavorites);
+        // TEST
+
+
+        console.log("in removeFav Context Provider");
     }
   
     return (<ItemContext.Provider value={ {items, favorites, fetchRecipes, addFavorite, removeFavorite} }>
