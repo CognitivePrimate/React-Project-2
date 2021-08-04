@@ -34,10 +34,8 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // set state and pass to children
     const [items, setItems] = useState<Hit[]>([]);
 
-    // set favorites state and pass to children
     const [favorites, setFavorites] = useState<Item[]>([]);
-
-    // TEST
+ 
     useEffect(() => {
         fetchAllRecipes({q: "chicken"}).then((data) => {
             setItems(data)
@@ -84,18 +82,25 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     // TEST
     // to be added to favorites section dependant on function call by click
     const addFavorite = (item: Item): void => {
-        setFavorites(prevFavorites => [
-            ...prevFavorites,
-            item
-        ],)
+        let newFavorites: Item[] = favorites;
+        newFavorites.push(item);
+        setFavorites(newFavorites);
     }
 
     // remove from favorites
     const removeFavorite = (index: number): void => {
-        setFavorites(prevFavorites => [
-            ...prevFavorites.slice(0, index),
-            ...prevFavorites.slice(index + 1)
-        ]);
+        // setFavorites(prevFavorites => [
+        //     ...prevFavorites.slice(0, index),
+        //     ...prevFavorites.slice(index + 1)
+        // ]);
+        // TEST
+        let newFavorites: Item[] = favorites;
+        newFavorites.splice(index, 1);
+        setFavorites(newFavorites);
+        // TEST
+
+
+        console.log("in removeFav Context Provider");
     }
   
     return (<ItemContext.Provider value={ {items, favorites, fetchRecipes, addFavorite, removeFavorite} }>
