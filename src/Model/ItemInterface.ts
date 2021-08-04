@@ -2,7 +2,7 @@ import { DietOptionsState, HealthOptionsState } from "../Context/ItemContextProv
 
 // blueprint for individual recipe searched and returned item or items
 export interface Item {
-    recipe: any;
+    // recipe: any;
     label: string;
     image: string;
     url: string;
