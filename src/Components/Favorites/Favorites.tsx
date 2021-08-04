@@ -1,21 +1,14 @@
-// import { useContext } from "react";
-// import { ItemContext } from "../../Context/ItemContextProvider";
+import { useContext } from "react";
+import { ItemContext } from "../../Context/ItemContextProvider";
+import Item from "../Item/Item";
 
 
-// function Favorites(){
-//     const {favorites = useContext(ItemContext);
-    
-//     return (
-        
-//         <div className="FavoritesWrapper">  
-//         <ul>
-//             {Favorites.map((favorites, index) => 
-//                 <li>{favorites.label}</li>
-//             )}
-//             </ul>
-//         </div>
-//     )
-// }
-
-
-// export default Favorites;
+function DisplayFavorites(){
+    const {favorites} = useContext(ItemContext);
+    return (
+        <div className="FavoritesWrapper">  
+        {favorites.map((item, index) => <Item key={`$item.recipe.label-${index}`} item={item.recipe} />)}
+        </div>
+    )
+}
+export default DisplayFavorites;

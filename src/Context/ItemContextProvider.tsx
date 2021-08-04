@@ -13,7 +13,6 @@ export interface HealthOptionsState {
 }
 
 export interface ItemContextModel {
-    label: ReactNode;
     items: Hit[];
     favorites: Item[];
     addFavorite: (item: Item) => void;
