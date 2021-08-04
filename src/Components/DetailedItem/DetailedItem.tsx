@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ItemContext } from "../../Context/ItemContextProvider";
 import {Hit, Item} from "../../Model/ItemInterface";
@@ -25,6 +25,9 @@ function DetailedItem(){
 
     // displays the item chosen from initial search page based on a name (label) match
     const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
+    // TEST
+    // if (foundItem) {const definitelyFound: Hit = foundItem}
+    // TEST
     console.log("found item:", foundItem);
 
     //  handle adding/removing favorites   
@@ -91,7 +94,12 @@ function DetailedItem(){
 
     // variable for button click to take user to actual recipe page externally
     const link: string = foundItem ? foundItem.recipe.url : "";
-        console.log("link", link);
+
+    // const externalLink: void = useEffect(() => {
+    //     // if (foundItem) const definitelyFound: Hit = foundItem;
+    //       window.location.href = link;
+    // }, [link])
+    //     console.log("link", link);
 
     return (
         <div className="DetailedItemWrapperImage" style={{backgroundImage: `url(${background})`}}>
@@ -130,7 +138,7 @@ function DetailedItem(){
                     </p>
                 </div>
                 <div className="DetailedItemFooter">
-                    <Link className="DetailedRecipeButton" target="blank" to={link}>Recipe</Link>
+                    <Link className="DetailedRecipeButton" target="blank" to={{pathname: link}}>Recipe</Link>
                     <img className="DetailedItemfavoriteIcon" src={icon} alt="favorite-icon" onClick={() => {handleFavorites()}}/>
                 </div>
             </div>
@@ -138,8 +146,6 @@ function DetailedItem(){
         </div>
     )
 }
-    // favorite: boolean;
-
 
 export default DetailedItem;
 
