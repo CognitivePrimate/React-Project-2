@@ -20,7 +20,8 @@ interface Params {
     q: string;
     type: string;
     calories?: number;
-    health?: string[]
+    health?: string[];
+    diet?: string[];
 }
 
 // grabs all data
@@ -31,7 +32,8 @@ export const fetchAllRecipes = (fetchParams: QueryParams): Promise<Hit[]> => {
         q: fetchParams.q,
         type: "public",
         health: fetchParams.health,
-        calories: fetchParams.calories
+        calories: fetchParams.calories,
+        diet: fetchParams.diet
     }
 
 
