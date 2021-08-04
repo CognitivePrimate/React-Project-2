@@ -3,13 +3,20 @@ import { ItemContext } from "../../Context/ItemContextProvider";
 import Item from "../Item/Item";
 
 
-function DisplayFavorites(){
+function Favorites(){
     const {favorites} = useContext(ItemContext);
-    console.log(favorites);
+    console.log("favorites from Favorites Component", favorites);
     return (
-        <div className="FavoritesWrapper">  
-        {favorites.map((item, index) => <Item key={`${item.recipe.label}-${index}`} item={item.recipe} />)}
+        
+        <div className="FavoritesWrapper">
+            <p>Favorites Test</p>
+            {favorites.map((item, index) => 
+                <Item 
+                    key={`${item.label}-${index}`}
+                    item={item}
+                />
+            )}
         </div>
     )
 }
-export default DisplayFavorites;
+export default Favorites;

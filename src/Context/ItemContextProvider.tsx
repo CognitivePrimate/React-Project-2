@@ -22,6 +22,7 @@ export interface DietOptionsState {
 export interface ItemContextModel {
     items: Hit[];
     favorites: Item[];
+    // favorites: Hit[];
     addFavorite: (item: Item) => void;
     removeFavorite: (index: number) => void;
     fetchRecipes: ({query, health, diet}: Query) => void;

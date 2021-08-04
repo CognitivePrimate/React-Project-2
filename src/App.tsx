@@ -5,6 +5,7 @@ import HomePageSearch from './Components/HomePageSearch/HomePageSearch';
 import { ItemContextProvider } from './Context/ItemContextProvider';
 import FoundItems from './Components/FoundItems/FoundItems';
 import DetailedItem from './Components/DetailedItem/DetailedItem';
+import Favorites from './Components/Favorites/Favorites';
 
 function App() {
 
@@ -23,6 +24,12 @@ function App() {
           <Route path="/DetailedItem/:label" exact>
             <ItemContextProvider>
               <DetailedItem />
+            </ItemContextProvider>
+          </Route>
+
+          <Route path="/Favorites" exact>
+            <ItemContextProvider>
+              <Favorites />
             </ItemContextProvider>
           </Route>
       </Switch>
