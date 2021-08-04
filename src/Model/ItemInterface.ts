@@ -1,4 +1,4 @@
-import { HealthOptionsState } from "../Context/ItemContextProvider";
+import { DietOptionsState, HealthOptionsState } from "../Context/ItemContextProvider";
 
 // blueprint for individual recipe searched and returned item or items
 export interface Item {
@@ -22,5 +22,6 @@ export interface Hit {
 export interface Query {
     query: string;
     calories?: string;
-    health?: HealthOptionsState
+    health?: HealthOptionsState | undefined;
+    diet?: DietOptionsState | undefined;
 }
