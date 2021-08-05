@@ -1,0 +1,9 @@
+div.FavoritesWrapper p.PaddingParagraph {
+    margin-top: 50px;
+    animation: FadeIn 1s;
+}
+
+div.FavoritesWrapper h2 {
+    width: 100%;
+    margin: 0 auto;
+}
