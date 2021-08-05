@@ -26,7 +26,9 @@ function DetailedItem(){
     // displays the item chosen from initial search page based on a name (label) match
     const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
     // TEST
-    // if (foundItem) {const definitelyFound: Hit = foundItem}
+    useEffect(() => {
+        foundItem?.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
+    },[foundItem?.recipe.favorite])
     // TEST
     console.log("found item:", foundItem);
 
@@ -65,26 +67,6 @@ function DetailedItem(){
     // image variable & initial check to determine which icon to show -- to-favorite or favorited
     let background = `${foundItem?.recipe.image}`;
     
-    // VVVINFINITE LOOP ZONE BELOW. ENABLE AT OWN RISK
-    // const initialIconSet = () => foundItem?.recipe.favorite ? setIcon(favoritedIcon) : null;
-    let internalCount: number = 0;
-    const initialIconSet = (): void => {
-        if (foundItem?.recipe.favorite === true) { 
-            internalCount++;
-            console.log("internal count", internalCount);
-            setIcon(favoritedIcon);
-            internalCount = 0;       
-        }
-        
-    }
-    // only call above function if internalCount is 0, to set proper favorite/favorited icon
-    // if (internalCount < 1) {initialIconSet()};
-
-    
-
-    
-    
-
     // changing hyphenated healthLabels from API to spaces instead
     const healthLabel: string[] | undefined = foundItem?.recipe.healthLabels;
     const healthLabelSplit: string | undefined = healthLabel?.join(", ");
