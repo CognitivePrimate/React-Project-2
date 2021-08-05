@@ -1,9 +1,26 @@
-div.FavoritesWrapper p.PaddingParagraph {
-    margin-top: 50px;
+div.FavoritesWrapper h2.PaddingParagraph {
+    margin-top: 70px;
     animation: FadeIn 1s;
 }
 
 div.FavoritesWrapper h2 {
     width: 100%;
     margin: 0 auto;
+    margin-top: 10px;
+    
+}
+
+div.FavoritesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 30px;
 }

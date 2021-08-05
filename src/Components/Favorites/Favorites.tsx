@@ -9,8 +9,7 @@ function Favorites(){
     console.log("favorites from Favorites Component", favorites);
     return (
         <div className="FavoritesWrapper">
-            <p className="PaddingParagraph">""</p>
-            <h2>Favorites</h2>
+            <h2 className="PaddingParagraph">Favorites</h2>
             {favorites.map((item, index) => 
                 <Item 
                     key={`${item.label}-${index}`}
