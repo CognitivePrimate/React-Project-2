@@ -103,6 +103,17 @@
     
 }
 
+div.DetailedItemWrapperImage button.backButton {
+    border-style: solid;
+    border-color: #8D80AD;
+    color: #8D80AD;
+    padding: 5px;
+    width: 50px;
+    border-width: 3px;
+    border-radius: 5px;
+    background: none;
+}
+
 .DetailedItemDietLabels:hover, .DetailedItemIngredients:hover, .DetailedItemHealthLabels:hover {
     overflow:visible;
     max-height: 500px;
@@ -118,7 +129,8 @@
     display: flex;
     align-self: flex-end;
     /* align-self: flex-start; */
-    justify-content: center;
+    justify-content: space-between;
+    padding: 8px 10px;
 }
 
 .DetailedRecipeButton {
@@ -138,10 +150,12 @@
     background:rgba(144, 81, 102);
 }
 
-.DetailedItemfavoriteIcon {
+/* .DetailedItemfavoriteIcon {
     position: absolute;
     right: 3%;
-}
+} */
+
+
 
 
 /* TEST */

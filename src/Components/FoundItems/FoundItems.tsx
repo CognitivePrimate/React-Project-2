@@ -18,7 +18,7 @@ function FoundItems(){
                     item={item.recipe}
                 />
             )}
-
+            
         </div>
     )
 

@@ -7,7 +7,7 @@ div.SearchContainer {
 }
 
 
-/*  conatiner styling */
+/*  container styling */
 
 div.SearchContainer div.FormContainer {
     border-style: solid;
@@ -184,6 +184,23 @@ input[type=range] {
     background: #582E44;
   }
 
-  /*  checkbox styling */
+
+/*  Desktop version */
+
+  @media only screen and (min-width: 600px) {
+    div.SearchContainer div.SearchOptionsContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    div.SearchContainer section.healthOptions {
+        margin: 0 5px;
+    }
+    div.SearchContainer div.calorie-and-count {
+        margin: 20px 0 0 0;
+    }
+  }
+
+
 
   
