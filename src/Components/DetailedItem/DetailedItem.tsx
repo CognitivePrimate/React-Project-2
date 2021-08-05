@@ -138,6 +138,7 @@ function DetailedItem(){
                     </p>
                 </div>
                 <div className="DetailedItemFooter">
+                    <Link to="/"><button className="backButton">Back</button></Link>
                     <Link className="DetailedRecipeButton" target="blank" to={{pathname: link}}>Recipe</Link>
                     <img className="DetailedItemfavoriteIcon" src={icon} alt="favorite-icon" onClick={() => {handleFavorites()}}/>
                 </div>

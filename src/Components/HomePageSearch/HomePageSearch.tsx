@@ -76,7 +76,7 @@ function HomePageSearch(){
     return (
         <div className="SearchContainer">
             <div className="FormContainer">
-                <form action="submit" onSubmit={handleSubmit}>
+                <form className="mainForm" action="submit" onSubmit={handleSubmit}>
                     <h3 className="fontTitles">Search A Recipe</h3>
                     <section className="SearchOptionSection">
                         <div className="SearchOptionsContainer">
@@ -91,7 +91,7 @@ function HomePageSearch(){
                                     <label className="fontLabels" htmlFor="vegetarian">Vegetarian</label>
                                 </div>
                             </section>
-                            <section>
+                            <section className="healthOptions">
                                 <p className="optionsTitles">Diet Options</p>
                                 <div className="checkboxContainer">
                                     <input type="checkbox" id="balanced" name="health-labels" value="balanced" checked={dietaryOptions.balanced} onClick={balancedCheck}/>
@@ -102,15 +102,15 @@ function HomePageSearch(){
                                     <label className="fontLabels" htmlFor="low-fat">Low-Fat</label>
                                 </div>
                             </section>
-                            <div>
-                                <div className="calorie-and-count">
+                            <section className="healthOptions">
+                                <div className="calorie-and-count optionsTitles">
                                     <label className="fontLabels calorieTitleLabel" htmlFor="calories">Calorie Limit:</label>
                                     <p className="calorieCountTrackerP">{calorieCount}</p>
                                 </div>
                                 <div>
                                     <input type="range" id="calories" name="calories" min="0" max="1000"  step="50" value={calorieCount} onChange= { (e) => setCalorieCount(e.target.value) }/>
                                 </div>
-                            </div>
+                            </section>
                         </div>
                         <div className="searchButtonDiv">
                             <label className="searchLabel fontLabels" htmlFor="search">Search:</label>
