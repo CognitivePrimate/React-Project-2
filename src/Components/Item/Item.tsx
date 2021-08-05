@@ -16,16 +16,17 @@ const ItemComponent = ({item}: Props) => {
     // with properties as set in ItemInterface model
     return (
         <Link className="ItemWrapper" to={`/DetailedItem/${item.label}`}>
-            <div className="ItemWrapperLeft">
-                <h3>{item.label}</h3>
+            <div className="ItemWrapperTop">
                 <img className="ItemImage" src={item.image} alt="food-pic"/>
+                <h3 className="cardHead">{item.label}</h3>
             </div>
-            <div className="ItemWrapperRight">
-                <div className="ItemInfoWrapper">
-                    <p className="ItemInfoBit">Servings | </p>
+            <div className="ItemWrapperMiddle">
+                <div className="ItemInfoBottom">
+                    <p className="ItemInfoBit">Servings</p>
                     <div className="NumberBubble">{item.yield}</div>
                 </div>
-                <div className="ItemInfoWrapper">
+                <span>|</span>
+                <div className="ItemInfoBottom">
                     <p className="ItemInfoBit">Calories</p>
                     <div className="NumberBubble">{(item.calories / item.yield).toFixed(0)}</div>
                 </div>

@@ -15,9 +15,11 @@ div.SearchContainer div.FormContainer {
     border-width: 1px;
     padding: 20px;
     background-color: #D7B957;
-    border-radius: 15px;
-    margin: 15vh auto 5px auto;
+    /* border-radius: 15px; */
+    border-radius: 5px;
+    margin: 15vh auto 10px auto;
     box-shadow: 1px 1px 8px 1px rgba(55, 50, 62, .5);
+    animation: FadeIn 1s;
 }
 
 div.SearchContainer div.SearchOptionsContainer {

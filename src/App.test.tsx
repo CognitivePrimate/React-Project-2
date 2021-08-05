@@ -14,8 +14,8 @@ test('renders HomePageSearch Component text', () => {
   expect(linkElement).toBeInTheDocument();
 });
 // TEST 2
-test('renders FoundItems', () => {
-  render(<FoundItems />);
-  const linkElement = screen.getByRole("div", {name: "FoundItemsWrapper"});
+test('renders Favorites', () => {
+  render(<DetailedItem />);
+  const linkElement = screen.getByRole("Link", {name: "DetailedRecipeButton"});
   expect(linkElement).toBeInTheDocument();
 });
