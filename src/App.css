@@ -7,10 +7,22 @@
   Puce --Muted Purple: #C191A1
   Bright/Pop: #DD1155 */
   /*Purple Mountain Majest --  Button? : #8D80Ad */
+
+
+/* Fonts */
+
+/* 
+Headers
+font-family: 'Crete Round', serif;
+Body
+font-family: 'Raleway', sans-serif;
+
+*/
 *{
   box-sizing: border-box;
   font-family: Merriweather;
   color: #37323E;
+  font-family: 'Crete Round', serif;
 }
 
 a {
@@ -36,12 +48,19 @@ h2 {
 
 h3 {
   color :#582E44;
+  font-size: xx-large;
 }
 
 h4 {
   color :#582E44;
 }
 
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/* Fonts */
 
 @keyframes FadeIn {
   from {
