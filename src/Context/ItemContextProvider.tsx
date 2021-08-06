@@ -53,12 +53,9 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
  
     const fetchRecipes = ({query, health, calories, diet}: Query): void => {
         
-        console.log(query)
-        console.log(calories);
-        console.log(diet);
+
         // gluten option conversion
         let glutenOption = "";
-        console.log(health);
         if (health?.gluten){
             glutenOption = "gluten-free"
         } else {
@@ -67,7 +64,6 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         
         // vegetarian option conversion
         let vegetarianOption = "";
-        console.log(health)
         if (health?.vegetarian){
             vegetarianOption = "vegetarian"
         }
@@ -86,7 +82,7 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
 
         // object that will be used to filter the data in the fetch.
         const parameters: QueryParams = {
-            q: query
+            q: query 
         }
         
         // adding each additional parameter key to the parameters object if it exists so there is no an empty string when it passes through.
@@ -113,19 +109,12 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
             parameters.calories = parseInt(caloriesAmount);
         }
 
-
-        // testing for each part of the parameters object
-        console.log(parameters);
-        console.log(parameters.q);
-        console.log(parameters.health);
-        console.log(parameters.calories);
-        console.log(parameters.diet);
         fetchAllRecipes(parameters).then((data) => {
             console.log("data:", data)
             setItems(data);
         })
     }
-    // TEST
+
     // to be added to favorites section dependant on function call by click
     const addFavorite = (item: Item): void => {
         let newFavorites: Item[] = favorites;
@@ -139,11 +128,10 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         //     ...prevFavorites.slice(0, index),
         //     ...prevFavorites.slice(index + 1)
         // ]);
-        // TEST
         let newFavorites: Item[] = favorites;
         newFavorites.splice(index, 1);
         setFavorites(newFavorites);
-        // TEST
+
 
 
         console.log("in removeFav Context Provider");
