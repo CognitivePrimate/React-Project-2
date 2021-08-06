@@ -49,6 +49,7 @@
     border-radius: 5px;
     transition: all 1s;
     position: relative;
+    padding-top: 10px;
     backdrop-filter: blur(.05rem);
 }
 
@@ -112,6 +113,15 @@ div.DetailedItemWrapperImage button.backButton {
     border-width: 3px;
     border-radius: 5px;
     background: none;
+    transition: all .3s;
+    
+}
+
+div.DetailedItemWrapperImage button.backButton:hover {
+    background-color: #8D80AD;
+    color: #FFFBDB;
+    cursor: pointer;
+
 }
 
 .DetailedItemDietLabels:hover, .DetailedItemIngredients:hover, .DetailedItemHealthLabels:hover {
@@ -150,10 +160,11 @@ div.DetailedItemWrapperImage button.backButton {
     background:rgba(144, 81, 102);
 }
 
-/* .DetailedItemfavoriteIcon {
-    position: absolute;
-    right: 3%;
-} */
+.DetailedItemfavoriteIcon {
+    cursor: pointer;
+    /* position: absolute;
+    right: 3%; */
+}
 
 
 
