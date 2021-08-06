@@ -15,25 +15,18 @@
     flex-wrap: wrap;
     align-items: center;
     margin: 16vh auto;
-    height: 300px;
+    height: 400px;
     max-height: 900px;
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 500px;
     animation: FadeIn 1s;
     box-shadow: 2px 2px 8px 1px rgba(55, 50, 62, .5);
-    /* test */
     position: relative;
     background-position: bottom;
 }
 
-.DetailedItemWrapperImage, .DetailedItemWrapperImage * {
-    /* box-sizing: content-box; */
-}
 
-/* *:not(.DetailedItemWrapperImage, .DetailedItemWrapper){
-    box-sizing: border-box !important;
-} */
 
 .DetailedItemWrapper {
 
@@ -44,7 +37,6 @@
     background: rgba(55, 50, 62, 0.8);
     width: 80vw;
     max-width: 400px;
-    /* min-height: 270px; */
     max-height: 1800px;
     border-radius: 5px;
     transition: all 1s;
@@ -133,12 +125,9 @@ div.DetailedItemWrapperImage button.backButton:hover {
 
 .DetailedItemFooter {
     width: 100%;
-    /* position: absolute;
-    bottom: 0; */
     margin-top: auto;
     display: flex;
     align-self: flex-end;
-    /* align-self: flex-start; */
     justify-content: space-between;
     padding: 8px 10px;
 }

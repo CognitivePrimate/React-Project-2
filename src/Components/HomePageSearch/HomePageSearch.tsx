@@ -26,22 +26,17 @@ function HomePageSearch(){
         vegetarian: false
         }
     );
-    console.log(healthOptions);
 
     const [calorieCount, setCalorieCount] = useState('')
-    console.log(calorieCount);
 
     const [dietaryOptions, setDietaryOptions] = useState({
         balanced: false,
         lowFat: false
     })
-    console.log(dietaryOptions);
 
     // functions //
     function handleSubmit(e: FormEvent){
         e.preventDefault();
-        // search data is a string
-        console.log(searchData);
         // query is type Query
         fetchRecipes({query: searchData, health: healthOptions, calories: calorieCount, diet: dietaryOptions})
     }
@@ -67,10 +62,7 @@ function HomePageSearch(){
         setDietaryOptions({balanced: dietaryOptions.balanced, lowFat: !lowFatCheck})
     }
 
-
-
-
-    console.log("items:", items);
+    console.log(calorieCount);
     console.log(searchData);
 
     return (
@@ -104,8 +96,7 @@ function HomePageSearch(){
                             </section>
                             <section className="healthOptions">
                                 <div className="calorie-and-count optionsTitles">
-                                    <label className="fontLabels calorieTitleLabel" htmlFor="calories">Calorie Limit:</label>
-                                    <p className="calorieCountTrackerP">{calorieCount}</p>
+                                    <label className="optionsTitles calorieTitleLabel" htmlFor="calories">Calorie Limit: {calorieCount}</label>
                                 </div>
                                 <div>
                                     <input type="range" id="calories" name="calories" min="0" max="1000"  step="50" value={calorieCount} onChange= { (e) => setCalorieCount(e.target.value) }/>
@@ -114,7 +105,7 @@ function HomePageSearch(){
                         </div>
                         <div className="searchButtonDiv">
                             <label className="searchLabel fontLabels" htmlFor="search">Search:</label>
-                            <input type="text" name="search" id="search" value={searchData} onChange={ (e) => setSearchData(e.target.value) }/>
+                            <input className="searchInput" type="text" name="search" id="search" value={searchData} onChange={ (e) => setSearchData(e.target.value) }/>
                         </div>
                     </section>
                     <div className="SubmitButtonContainer">
@@ -122,8 +113,6 @@ function HomePageSearch(){
                     </div>
                 </form>
             </div>
-            <section className="SearchResultsContainer">
-            </section>
         </div>
     )
 

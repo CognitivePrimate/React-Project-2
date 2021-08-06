@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ItemContext } from "../../Context/ItemContextProvider";
-import {Hit, Item} from "../../Model/ItemInterface";
+import {Hit} from "../../Model/ItemInterface";
 
 // css
 import "./DetailedItemStyles.css";
@@ -25,32 +25,33 @@ function DetailedItem(){
 
     // displays the item chosen from initial search page based on a name (label) match
     const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
-    // TEST
+    
+    // checks if recipe is already favorited and sets icon accordingly --- useEffect stops from cycling into infinite loop
     useEffect(() => {
         foundItem?.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
     },[foundItem?.recipe.favorite])
-    // TEST
+    
     console.log("found item:", foundItem);
 
     //  handle adding/removing favorites   
     const handleFavorites = () => {
-        console.log("in handleFavorites");
+
         let index = -1;
         if (foundItem?.recipe){
-            console.log("in If statement in handleFavorites");
+            
             // if recipe is favorited, will unfavorite and vice versa
             foundItem.recipe.favorite = !foundItem.recipe.favorite;
-            console.log("favorite", foundItem.recipe.favorite);
+            
             // if recipe is favorited icon sets to favorited
             foundItem.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
-            console.log("image", icon);
+            
             
             // to get index for removal from favorites --- IS THIS BEST WAY? ASK KYLE
             for (const favorite of favorites) {
                 // favorite.label === favorite.label ? break : continue;
                 index++;
                 if  (foundItem.recipe.label === favorite.label) {
-                    console.log("index", index);
+                    
                     break;
                 } else {
                     continue;
@@ -60,7 +61,7 @@ function DetailedItem(){
             // to add item to favorites
             foundItem.recipe.favorite ? addFavorite(foundItem.recipe) : removeFavorite(index);
             index = -1;
-            console.log("favorites:", favorites);
+            
         }
     }
 
