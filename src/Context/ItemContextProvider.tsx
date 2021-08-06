@@ -121,11 +121,10 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         console.log(parameters.calories);
         console.log(parameters.diet);
         fetchAllRecipes(parameters).then((data) => {
-            console.log("data:", data)
             setItems(data);
         })
     }
-    // TEST
+    
     // to be added to favorites section dependant on function call by click
     const addFavorite = (item: Item): void => {
         let newFavorites: Item[] = favorites;
@@ -135,18 +134,10 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
 
     // remove from favorites
     const removeFavorite = (index: number): void => {
-        // setFavorites(prevFavorites => [
-        //     ...prevFavorites.slice(0, index),
-        //     ...prevFavorites.slice(index + 1)
-        // ]);
-        // TEST
         let newFavorites: Item[] = favorites;
         newFavorites.splice(index, 1);
         setFavorites(newFavorites);
-        // TEST
 
-
-        console.log("in removeFav Context Provider");
     }
   
     return (<ItemContext.Provider value={ {items, favorites, fetchRecipes, addFavorite, removeFavorite} }>
