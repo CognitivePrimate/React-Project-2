@@ -106,6 +106,10 @@ div.SearchContainer input.searchInput {
     transition: all 0.3s;
 }
 
+.SubmitButton:hover {
+  opacity: .9;
+}
+
 
 
 input {

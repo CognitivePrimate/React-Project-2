@@ -34,7 +34,8 @@
 
 .ItemWrapper:hover {
     /* box-shadow: 1px 1px 2.5px 1px rgba(55, 50, 62, .5); */
-    box-shadow: 1px 1px 18px 7px #582E44;
+    /* box-shadow: 1px 1px 17px 7px #582E44; */
+    box-shadow: 1px 1px 17px 7px rgba(88, 46, 68, .5);
 }
 
 .ItemWrapperTop {
