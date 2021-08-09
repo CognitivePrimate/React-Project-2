@@ -24,13 +24,6 @@
     overflow: hidden;
 }
 
-/* @keyframes FadeIn {
-    from {
-        opacity: 0;
-    }to{
-        opacity:1;
-    }
-} */
 
 .ItemWrapper:hover {
     /* box-shadow: 1px 1px 2.5px 1px rgba(55, 50, 62, .5); */
