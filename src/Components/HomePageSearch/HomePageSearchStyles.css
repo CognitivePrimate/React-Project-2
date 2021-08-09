@@ -26,7 +26,8 @@ div.SearchContainer div.FormContainer {
 
 div.SearchContainer div.SearchOptionsContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 div.SearchContainer div.SubmitButtonContainer {
@@ -248,7 +249,7 @@ input[type=range] {
         margin:  0 0 5px 0;
     }
     div.SearchContainer form.mainForm {
-        width: 400px;
+        width: 500px;
     }
     div.SearchContainer label.optionsTitles {
         font-family: 'Crete Round', serif;
