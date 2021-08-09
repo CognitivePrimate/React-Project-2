@@ -1,11 +1,14 @@
 .DetailedHeaderText{
     color: #FFFBDB;
+    padding-bottom: 0;
 }
 
 .DetailedItemText{
     color: #FFFBDB;
     font-size: .75rem;
     margin: 0;
+    font-family: 'Raleway', sans-serif;
+    
 }
 
 .DetailedItemWrapperImage {
@@ -26,10 +29,11 @@
     background-position: bottom;
 }
 
-
+.DetailedItemInfoBit{
+    font-size: 1rem;
+}
 
 .DetailedItemWrapper {
-
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -74,13 +78,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 33px;
-    height: 33px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #37323E;
-    color: white;
+    color: #FFFBDB;
     text-align: center;
-    font-size: .70rem;
+    font-size: .90rem;
 }
 
 .DetailedItemHealthLabels {
@@ -88,12 +92,18 @@
 }
 
 .DetailedItemDietLabels, .DetailedItemIngredients {
+    display: flex;
     margin: 5px 8px;
     height: 28px;
+    min-height: 28px;
     max-height: 500px;
-    overflow:hidden;
-    transition: height 1s;
+    overflow: hidden;
     
+}
+
+.Accordion {
+    cursor: pointer;
+    transition: 0.7s;
 }
 
 div.DetailedItemWrapperImage button.backButton {
@@ -116,12 +126,25 @@ div.DetailedItemWrapperImage button.backButton:hover {
 
 }
 
-.DetailedItemDietLabels:hover, .DetailedItemIngredients:hover, .DetailedItemHealthLabels:hover {
-    overflow:visible;
-    max-height: 500px;
-    height: auto;
-
+.DetailedItemDietLabels:hover, .DetailedItemIngredients:hover {
+    /* overflow:visible; */
+    /* animation-duration: 1s;
+    animation: addHeight; */
+    /* height: auto; */
+    /* height: 28px; */
+    /* min-height: 28px; */
+    /* max-height: 0; */
 }
+
+
+/* @keyframes addHeight{
+    from {
+        padding-bottom: 0px;
+    } to {
+        padding-bottom: 200px;
+    }
+
+} */
 
 .DetailedItemFooter {
     width: 100%;
@@ -190,7 +213,7 @@ div.DetailedItemWrapperImage button.backButton:hover {
 } */
 
 @media only screen and (min-width: 600px) {
-    .DetailedItemImageAndTitleWrapper {
+    .DetailedItemWrapperImage {
         border-radius: 5px;
     }
 }

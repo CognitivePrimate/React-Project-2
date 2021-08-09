@@ -9,6 +9,8 @@ import "./DetailedItemStyles.css";
 // import icons
 import tofavoriteIcon from "../../Icons/to-favorite.svg";
 import favoritedIcon from "../../Icons/favorited.svg";
+import expand from "../../Icons/expand.svg";
+import { isGetAccessorDeclaration } from "typescript";
 
 interface RouteParams {
     label: string
@@ -32,6 +34,14 @@ function DetailedItem(){
     },[foundItem?.recipe.favorite])
     
     console.log("found item:", foundItem);
+
+    // accordion function for health and ingredient display expansion
+    const accordion = () => {
+        let accordionButton = document.getElementsByClassName("Accordion");
+        for (let i=0; i < accordionButton.length; i++){
+            
+        }
+    }
 
     //  handle adding/removing favorites   
     const handleFavorites = () => {
@@ -93,9 +103,9 @@ function DetailedItem(){
                 </div>
                 <div className="DetailsWrapper">
                     <div className="DetailedItemInfoWrapper">
-                        <p className="ItemInfoBit DetailedItemText">Servings</p>
-                        <p className="ItemInfoBit DetailedItemText">Calories</p>
-                        <p className="ItemInfoBit DetailedItemText">PrepTime</p>
+                        <p className="DetailedItemInfoBit DetailedItemText">Servings</p>
+                        <p className="DetailedItemInfoBit DetailedItemText">Calories</p>
+                        <p className="DetailedItemInfoBit DetailedItemText">PrepTime</p>
                     </div>
                     <div className="DetailedItemBubbleWrapper">
                         <div className="DetailedNumberBubble">{foundItem?.recipe.yield}</div>
@@ -107,10 +117,11 @@ function DetailedItem(){
                     {/* VV if dietlabels exist, display below. otherwise nothing displays */}
                     {foundItem?.recipe.dietLabels ? <p className="DetailedItemText"><b className="DetailedItemText">Diet Labels:</b> {foundItem?.recipe.dietLabels}</p> : null}
                 </div>
-                <div className="DetailedItemDietLabels">
+                <div className="DetailedItemDietLabels Accordion">
                     <p className="DetailedItemText"><b className="DetailedItemText">Health Labels: </b>{healthLabelSplit}</p>
+                    <img src={expand} alt="see more" onClick={accordion}/>
                 </div>
-                <div className="DetailedItemIngredients">
+                <div className="DetailedItemIngredients Accordion">
                     {/* <p className="DetailedItemText"><b className="DetailedItemText">Ingredients: </b>{foundItem?.recipe.ingredientLines}</p> */}
                     <p className="DetailedItemText"><b className="DetailedItemText">Ingredients:</b> 
                         {ingredientList?.map((ingredient, index) =>
@@ -119,6 +130,7 @@ function DetailedItem(){
                             </li>
                         )}
                     </p>
+                    <img src={expand} alt="see more" onClick={accordion}/>
                 </div>
                 <div className="DetailedItemFooter">
                     <Link to="/"><button className="backButton">Back</button></Link>

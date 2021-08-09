@@ -20,7 +20,7 @@ font-family: 'Raleway', sans-serif;
 */
 *{
   box-sizing: border-box;
-  font-family: Merriweather;
+  /* font-family: Merriweather; */
   color: #37323E;
   font-family: 'Crete Round', serif;
 }
