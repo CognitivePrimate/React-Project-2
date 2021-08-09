@@ -188,3 +188,9 @@ div.DetailedItemWrapperImage button.backButton:hover {
     background: linear-gradient(to bottom, rgba(255,255,255,0.2),white);
     z-index: 1;
 } */
+
+@media only screen and (min-width: 600px) {
+    .DetailedItemImageAndTitleWrapper {
+        border-radius: 5px;
+    }
+}
