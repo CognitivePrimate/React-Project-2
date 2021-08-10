@@ -96,14 +96,19 @@
     margin: 5px 8px;
     height: 28px;
     min-height: 28px;
-    max-height: 500px;
+    /* max-height: 500px; */
     overflow: hidden;
+    cursor: pointer;
+    transition: all 1s;
     
 }
 
 .Accordion {
+    margin: 5px 8px;
     cursor: pointer;
-    transition: 0.7s;
+    min-height: 28px;
+    max-height: 500px;
+    overflow:hidden;
 }
 
 div.DetailedItemWrapperImage button.backButton {
@@ -216,4 +221,27 @@ div.DetailedItemWrapperImage button.backButton:hover {
     .DetailedItemWrapperImage {
         border-radius: 5px;
     }
+
+    .DetailedItemWrapper {
+        padding-top: 0;
+    }
+
+    .HiddenImage {
+        display: flex;
+        flex: 1;
+        border-radius: 5px 0 5px 0;
+        margin-bottom: 5px;
+        height: 150px;
+        animation: FadeIn 0.7s;
+    }
+
+    /* .DetailedItemImageAndTitleWrapper {
+        height: 150px;
+    } */
+
+    .DetailedHeaderText{
+        flex: 3;
+        margin-top: 60px
+    }
+
 }

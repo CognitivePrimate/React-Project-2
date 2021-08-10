@@ -10,7 +10,7 @@ import "./DetailedItemStyles.css";
 import tofavoriteIcon from "../../Icons/to-favorite.svg";
 import favoritedIcon from "../../Icons/favorited.svg";
 import expand from "../../Icons/expand.svg";
-import { isGetAccessorDeclaration } from "typescript";
+import { isGetAccessorDeclaration, setConstantValue } from "typescript";
 
 interface RouteParams {
     label: string
@@ -36,11 +36,35 @@ function DetailedItem(){
     console.log("found item:", foundItem);
 
     // accordion function for health and ingredient display expansion
-    const accordion = () => {
-        let accordionButton = document.getElementsByClassName("Accordion");
-        for (let i=0; i < accordionButton.length; i++){
+    const [isActive, setActive] = useState(false);
+    const [isAlsoActive, setAlsoActive] = useState(false);
+    // const [isActive, setActive] = useState({activeClasses: [false, false]})
+    const handleAccordion = () => {
+        // setActive(!isActive);
+        // console.log(isActive);
+        
+        // let accordionButton: HTMLElement | null = document.querySelector("Accordion");
+        // let accordionText: HTMLElement | null = document.querySelector("DetailedItemText");
+        // const labels = foundItem?.recipe.healthLabels
+        
+        // console.log("in accordion function before if statement");
+        // if (accordionButton){
+        //     console.log("in first if statement");
+        //     if (accordionText){
+        //         console.log("in if, not in loop");
+        //         for (let i=0; i < accordionText.innerText.length; i++){
+        //             if (accordionButton.style.maxHeight){
+        //                 accordionButton.style.maxHeight = 28 + "px";
+        //                 console.log("in if statement")
+        //             } else {
+        //                 console.log("in else statement");
+        //                 accordionButton.style.maxHeight = accordionButton.scrollHeight + "px";
+        //             }
+        //         }
+        //     }
             
-        }
+        // }
+        
     }
 
     //  handle adding/removing favorites   
@@ -117,11 +141,11 @@ function DetailedItem(){
                     {/* VV if dietlabels exist, display below. otherwise nothing displays */}
                     {foundItem?.recipe.dietLabels ? <p className="DetailedItemText"><b className="DetailedItemText">Diet Labels:</b> {foundItem?.recipe.dietLabels}</p> : null}
                 </div>
-                <div className="DetailedItemDietLabels Accordion">
-                    <p className="DetailedItemText"><b className="DetailedItemText">Health Labels: </b>{healthLabelSplit}</p>
-                    <img src={expand} alt="see more" onClick={accordion}/>
+                <div className={isActive ? "Accordion" : "DetailedItemDietLabels"} onClick={() => {setActive(!isActive)}} >
+                    <p className="DetailedItemText" ><b className="DetailedItemText">Health Labels: </b>{healthLabelSplit}</p>
+                    <img src={expand} alt="see more"/>
                 </div>
-                <div className="DetailedItemIngredients Accordion">
+                <div className={isAlsoActive ? "Accordion" : "DetailedItemIngredients"} onClick={() => {setAlsoActive(!isAlsoActive)}}>
                     {/* <p className="DetailedItemText"><b className="DetailedItemText">Ingredients: </b>{foundItem?.recipe.ingredientLines}</p> */}
                     <p className="DetailedItemText"><b className="DetailedItemText">Ingredients:</b> 
                         {ingredientList?.map((ingredient, index) =>
@@ -130,7 +154,7 @@ function DetailedItem(){
                             </li>
                         )}
                     </p>
-                    <img src={expand} alt="see more" onClick={accordion}/>
+                    <img src={expand} alt="see more"/>
                 </div>
                 <div className="DetailedItemFooter">
                     <Link to="/"><button className="backButton">Back</button></Link>
