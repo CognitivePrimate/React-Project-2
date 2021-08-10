@@ -82,9 +82,9 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
 
         // object that will be used to filter the data in the fetch.
         const parameters: QueryParams = {
-            q: query 
+            q: query
         }
-        
+        console.log(parameters)
         // adding each additional parameter key to the parameters object if it exists so there is no an empty string when it passes through.
         // have to check each to make sure each is true in combinations so it goes into the string array. This will add many more combinations for each additional option.
         if (glutenOption && !vegetarianOption){
@@ -94,6 +94,16 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         } else if (glutenOption && vegetarianOption){
             parameters.health = [glutenOption, vegetarianOption]
         } 
+
+        // if (glutenOption){
+        //     parameters.health?.concat(vegetarianOption);
+        // }
+
+        // if (vegetarianOption){
+        //     parameters.health?.push(vegetarianOption)
+        // }
+
+
 
         // checking for diet array of strings
         if (balancedOption && !lowFatOption){
