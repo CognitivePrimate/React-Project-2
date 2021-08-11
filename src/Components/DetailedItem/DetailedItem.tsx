@@ -24,7 +24,6 @@ function DetailedItem(){
 
     // for handling icon display
     const [icon, setIcon] = useState(tofavoriteIcon);
-    // 
 
     // displays the item chosen from initial search page based on a name (label) match
     const foundItem: Hit | undefined = items.find((item) => item.recipe.label === label);
@@ -34,40 +33,11 @@ function DetailedItem(){
         foundItem?.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
     },[foundItem?.recipe.favorite])
     
-    console.log("found item:", foundItem);
 
-    // accordion function for health and ingredient display expansion
+    // active states for health and ingredient display expansion
     const [isActive, setActive] = useState(false);
     const [isAlsoActive, setAlsoActive] = useState(false);
-    // const [isActive, setActive] = useState({activeClasses: [false, false]})
-    const handleAccordion = () => {
-        // setActive(!isActive);
-        // console.log(isActive);
-        
-        // let accordionButton: HTMLElement | null = document.querySelector("Accordion");
-        // let accordionText: HTMLElement | null = document.querySelector("DetailedItemText");
-        // const labels = foundItem?.recipe.healthLabels
-        
-        // console.log("in accordion function before if statement");
-        // if (accordionButton){
-        //     console.log("in first if statement");
-        //     if (accordionText){
-        //         console.log("in if, not in loop");
-        //         for (let i=0; i < accordionText.innerText.length; i++){
-        //             if (accordionButton.style.maxHeight){
-        //                 accordionButton.style.maxHeight = 28 + "px";
-        //                 console.log("in if statement")
-        //             } else {
-        //                 console.log("in else statement");
-        //                 accordionButton.style.maxHeight = accordionButton.scrollHeight + "px";
-        //             }
-        //         }
-        //     }
-            
-        // }
-        
-    }
-
+   
     //  handle adding/removing favorites   
     const handleFavorites = () => {
 
@@ -80,10 +50,8 @@ function DetailedItem(){
             // if recipe is favorited icon sets to favorited
             foundItem.recipe.favorite ? setIcon(favoritedIcon) : setIcon(tofavoriteIcon);
             
-            
-            // to get index for removal from favorites --- IS THIS BEST WAY? ASK KYLE
+            // to get index for removal from favorites
             for (const favorite of favorites) {
-                // favorite.label === favorite.label ? break : continue;
                 index++;
                 if  (foundItem.recipe.label === favorite.label) {
                     
@@ -112,12 +80,6 @@ function DetailedItem(){
 
     // variable for button click to take user to actual recipe page externally
     const link: string = foundItem ? foundItem.recipe.url : "";
-
-    // const externalLink: void = useEffect(() => {
-    //     // if (foundItem) const definitelyFound: Hit = foundItem;
-    //       window.location.href = link;
-    // }, [link])
-    //     console.log("link", link);
 
     return (
         <div className="DetailedItemWrapperImage" style={{backgroundImage: `url(${background})`}}>
@@ -148,7 +110,6 @@ function DetailedItem(){
                     <img src={expand} alt="see more"/>
                 </div>
                 <div className={isAlsoActive ? "Accordion" : "DetailedItemIngredients"} onClick={() => {setAlsoActive(!isAlsoActive)}}>
-                    {/* <p className="DetailedItemText"><b className="DetailedItemText">Ingredients: </b>{foundItem?.recipe.ingredientLines}</p> */}
                     <p className="DetailedItemText"><b className="DetailedItemText">Ingredients:</b> 
                         {ingredientList?.map((ingredient, index) =>
                             <li className="DetailedItemText" key={`${ingredient}-${index}`}>
@@ -164,7 +125,6 @@ function DetailedItem(){
                     <img className="DetailedItemfavoriteIcon" src={icon} alt="favorite-icon" onClick={() => {handleFavorites()}}/>
                 </div>
             </div>
-            {/* <div className="Reflection" style={{backgroundImage: `url(${background})`}}></div> */}
         </div>
     )
 }

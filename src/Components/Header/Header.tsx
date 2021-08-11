@@ -7,9 +7,6 @@ function Header() {
 
 
     return (
-
-
-
         <header className="Header">
             <Link to="/"><h1 className="MainHead">Chonk Watchers</h1></Link>
 

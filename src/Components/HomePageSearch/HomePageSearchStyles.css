@@ -15,7 +15,6 @@ div.SearchContainer div.FormContainer {
     border-width: 1px;
     padding: 20px;
     background-color: #D7B957;
-    /* border-radius: 15px; */
     border-radius: 5px;
     margin: 18vh auto 10px auto;
     box-shadow: 1px 1px 8px 1px rgba(55, 50, 62, .5);
@@ -92,8 +91,6 @@ div.SearchContainer input.searchInput {
     border-radius: 10px;
 }
 
-
-
 .SubmitButton {
     background: #582E44;
     color: #FFFBDB;
@@ -110,8 +107,6 @@ div.SearchContainer input.searchInput {
 .SubmitButton:hover {
   opacity: .9;
 }
-
-
 
 input {
     background: #FFFBDB;

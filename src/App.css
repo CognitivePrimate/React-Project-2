@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Permanent+Marker&family=Tangerine:wght@700&display=swap');
 
-
+/* COLORS */
 /* light: #FFFBDB
   Black Coffee --Shadows / deep: #37323E
   Old Gold --Search Box Gold: #D7B957
@@ -8,19 +8,15 @@
   Bright/Pop: #DD1155 */
   /*Purple Mountain Majest --  Button? : #8D80Ad */
 
-
-/* Fonts */
-
+/* FONTS */
 /* 
 Headers
 font-family: 'Crete Round', serif;
 Body
 font-family: 'Raleway', sans-serif;
-
 */
 *{
   box-sizing: border-box;
-  /* font-family: Merriweather; */
   color: #37323E;
   font-family: 'Crete Round', serif;
 }
@@ -31,14 +27,12 @@ a {
 
 
 body {
-  /* padding: 20px; */
   background: #FFFBDB;
 }
 
 h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.5rem;
-  /* color :#582E44; */
   color: #351C2A;
 }
 
@@ -60,8 +54,7 @@ p {
 }
 
 
-/* Fonts */
-
+/* slight fade in animation for component rendering */
 @keyframes FadeIn {
   from {
       opacity: 0;

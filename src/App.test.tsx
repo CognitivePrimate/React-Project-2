@@ -1,13 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
-import Item from './Components/Item/Item';
-import ItemComponent from './Components/Item/Item';
 import FoundItems from './Components/FoundItems/FoundItems';
 import HomePageSearch from './Components/HomePageSearch/HomePageSearch';
-import DetailedItem from './Components/DetailedItem/DetailedItem';
 import Favorites from './Components/Favorites/Favorites';
-import Header from './Components/Header/Header';
 
 // TEST 1
 test('renders HomePageSearch Component text', () => {

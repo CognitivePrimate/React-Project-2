@@ -9,7 +9,6 @@ const RecipeAPIUrlAll: string = "https://api.edamam.com/api/recipes/v2";
 // API KEY AND ID
 const id = process.env.REACT_APP_API_ID;
 const key = process.env.REACT_APP_EDAMAM_API_KEY;
-// const key = "3132e804";
 console.log(id);
 console.log(key);
 

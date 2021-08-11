@@ -22,7 +22,6 @@ export interface DietOptionsState {
 export interface ItemContextModel {
     items: Hit[];
     favorites: Item[];
-    // favorites: Hit[];
     addFavorite: (item: Item) => void;
     removeFavorite: (index: number) => void;
     fetchRecipes: ({query, health, diet}: Query) => void;
@@ -45,14 +44,13 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
     const [favorites, setFavorites] = useState<Item[]>([]);
  
     useEffect(() => {
-        fetchAllRecipes({q: "chicken"}).then((data) => {
+        fetchAllRecipes({q: ""}).then((data) => {
             setItems(data)
         })
     },[])
     
  
     const fetchRecipes = ({query, health, calories, diet}: Query): void => {
-        
 
         // gluten option conversion
         let glutenOption = "";
@@ -94,16 +92,6 @@ export const ItemContextProvider = ({children}: {children: ReactNode}) => {
         } else if (glutenOption && vegetarianOption){
             parameters.health = [glutenOption, vegetarianOption]
         } 
-
-        // if (glutenOption){
-        //     parameters.health?.concat(vegetarianOption);
-        // }
-
-        // if (vegetarianOption){
-        //     parameters.health?.push(vegetarianOption)
-        // }
-
-
 
         // checking for diet array of strings
         if (balancedOption && !lowFatOption){

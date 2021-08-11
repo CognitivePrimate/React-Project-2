@@ -15,36 +15,18 @@
     height: 325px;
     width: 30px;
     background: rgba(88, 46, 68, 0.7); 
-    left: 5rem;
-    top: 21.5rem;
+    left: 6rem;
+    top: 20.5rem;
     box-shadow: 2.5px 2.5px 8px 1px rgba(55, 50, 62, .5);
-    /* border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px; */
     border-radius: 50px;
-    /* border-bottom: 30px solid #FFFBDB; */
-    /* border-right: 30px rgba(88, 46, 68, 0.7); */
 }
 
 .InnerBottomTriangle {
-    /* position: absolute;
-    height: 0px;
-    width: 0px;
-    left: -5.65rem;
-    top: 39.72rem;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-top: 30px solid rgba(215, 185, 87, 0.6);
-    transform: rotate(0.625turn);
-    z-index: 2; */
-
     position: absolute;
     height: 30px;
     width: 30px;
-    left: 5rem;
-    top: 40rem;
+    left: 6rem;
+    top: 39rem;
     border-radius: 0 50% 50% 50%;
     border-top: 30px solid rgba(215, 185, 87, 0.6);
     transform: rotate(0.25turn);
@@ -56,10 +38,8 @@
     height: 30px;
     width: 40rem;
     background: rgba(88, 46, 68, 0.7); 
-    left: 5rem;
-    top: 40rem;
-    /* border-left: 30px solid #FFFBDB;
-    border-bottom: 30px rgba(88, 46, 68, 0.7); */
+    left: 6rem;
+    top: 39rem;
     border-radius: 50px;
     box-shadow: 2.5px 2.5px 8px 1px rgba(55, 50, 62, .5);
 }
@@ -69,23 +49,18 @@
     height: 360px;
     width: 40px;
     background: rgba(88, 46, 68, 0.7); 
-    left: 0rem;
-    top: 25rem;
+    left: 2rem;
+    top: 22rem;
     box-shadow: 2.5px 2.5px 8px 1px rgba(55, 50, 62, .5);
-    /* border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px; */
     border-radius: 50px;
-    /* border-bottom: 30px solid #FFFBDB; */
-    /* border-right: 30px rgba(88, 46, 68, 0.7); */
 }
 
 .OuterBottomTriangle {
     position: absolute;
     height: 40px;
     width: 40px;
-    left: 0rem;
-    top: 45rem;
+    left: 2rem;
+    top: 42rem;
     border-radius: 0 50% 50% 50%;
     border-top: 40px solid rgba(215, 185, 87, 0.6);
     transform: rotate(0.25turn);
@@ -97,8 +72,8 @@
     height: 40px;
     width: 50rem;
     background: rgba(88, 46, 68, 0.7); 
-    left: 0rem;
-    top: 45rem;
+    left: 2rem;
+    top: 42rem;
     border-radius: 50px;
     box-shadow: 2.5px 2.5px 8px 1px rgba(55, 50, 62, .5);
 }

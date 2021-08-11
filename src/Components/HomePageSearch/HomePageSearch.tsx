@@ -1,17 +1,10 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
-import { fetchAllRecipes } from "../../Services/RecipeServices";
+import { FormEvent, useContext, useState } from "react";
 import './HomePageSearchStyles.css';
 
 // importing Item interface
 // importing Item interface to use as props for component
-import {Item} from "../../Model/ItemInterface";
 import { ItemContext } from "../../Context/ItemContextProvider";
 
-// this is a random change to test for Tami 
-
-// interface Props {
-//     onSubmit: () => void;
-// }
 
 function HomePageSearch(){
 
