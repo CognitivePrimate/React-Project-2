@@ -25,9 +25,9 @@ div.SearchContainer div.FormContainer {
 
 div.SearchContainer div.SearchOptionsContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 div.SearchContainer div.SubmitButtonContainer {
@@ -63,6 +63,8 @@ div.SearchContainer label.fontLabels {
 div.SearchContainer section.healthOptions {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  margin: 5px;
 }
 
 div.SearchContainer label.optionsTitles {
@@ -96,6 +98,7 @@ div.SearchContainer p.optionsTitles {
     margin: 0 .25rem 0 .25rem;
     border-radius: 4px;
     text-align: center;
+    width: 150px;
 }
 
 div.SearchContainer input.searchInput {
@@ -253,7 +256,7 @@ input[type=range] {
         margin: 0px 0 0 0;
     }
     div.SearchContainer label.calorieTitleLabel {
-        width: 100%;
+        width: 150px;
         margin:  0 0 5px 0;
     }
     div.SearchContainer form.mainForm {
