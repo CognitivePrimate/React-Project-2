@@ -11,6 +11,7 @@ import tofavoriteIcon from "../../Icons/to-favorite.svg";
 import favoritedIcon from "../../Icons/favorited.svg";
 import expand from "../../Icons/expand.svg";
 import { isGetAccessorDeclaration, setConstantValue } from "typescript";
+import TriangleBorder from "../TriangleBorder/TriangleBorder";
 
 interface RouteParams {
     label: string
@@ -120,6 +121,7 @@ function DetailedItem(){
 
     return (
         <div className="DetailedItemWrapperImage" style={{backgroundImage: `url(${background})`}}>
+            <TriangleBorder/>
             <div className="DetailedItemWrapper">
                 <div className="DetailedItemImageAndTitleWrapper">
                     <img className="HiddenImage"src={foundItem?.recipe.image} alt="food-pic"/>

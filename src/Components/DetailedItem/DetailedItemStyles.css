@@ -224,12 +224,14 @@ div.DetailedItemWrapperImage button.backButton:hover {
 
     .DetailedItemWrapper {
         padding-top: 0;
+        z-index: 11;
     }
 
     .HiddenImage {
         display: flex;
         flex: 1;
         border-radius: 5px 0 5px 0;
+        box-shadow: 2px 2px 8px 1px rgba(55, 50, 62, 0.9);
         margin-bottom: 5px;
         height: 150px;
         animation: FadeIn 0.7s;
