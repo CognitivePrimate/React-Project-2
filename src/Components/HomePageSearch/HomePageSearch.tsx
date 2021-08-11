@@ -91,7 +91,7 @@ function HomePageSearch(){
                                 <div className="calorie-and-count optionsTitles">
                                     <label className="optionsTitles calorieTitleLabel" htmlFor="calories">Calorie Limit: {calorieCount}</label>
                                 </div>
-                                <div>
+                                <div className="calorieContainer">
                                     <input type="range" id="calories" name="calories" min="0" max="1000"  step="50" value={calorieCount} onChange= { (e) => setCalorieCount(e.target.value) }/>
                                 </div>
                             </section>

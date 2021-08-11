@@ -3,12 +3,14 @@ div.SearchContainer {
     align-items: center;
     display: flex;
     flex-direction: column;
+    width: 95vw;
+    max-width: 600px;
+    margin: 0 auto;
     
 }
 
 
 /*  container styling */
-
 div.SearchContainer div.FormContainer {
     border-style: solid;
     border-color: #8E7A3D;
@@ -16,17 +18,16 @@ div.SearchContainer div.FormContainer {
     padding: 20px;
     background-color: #D7B957;
     border-radius: 5px;
-    margin: 18vh auto 10px auto;
+    margin: 10rem auto 10px auto;
     box-shadow: 1px 1px 8px 1px rgba(55, 50, 62, .5);
     animation: FadeIn 1s;
 }
-
-
 
 div.SearchContainer div.SearchOptionsContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 div.SearchContainer div.SubmitButtonContainer {
@@ -42,7 +43,7 @@ div.SearchContainer section.SearchOptionSection {
 div.SearchContainer div.checkboxContainer {
     margin: 5px 0;
     display: flex;
-    justify-content: left;
+
 }
 
 div.SearchContainer h3.fontTitles {
@@ -53,15 +54,25 @@ div.SearchContainer h3.fontTitles {
 
 div.SearchContainer label.fontLabels {
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+div.SearchContainer section.healthOptions {
+  display: flex;
+  flex-direction: column;
 }
 
 div.SearchContainer label.optionsTitles {
     font-family: 'Crete Round', serif;
     background-color: #582E44 ;
     color: #D7B957;
-    padding: 4px;
-    border-radius: 4px;
+    padding: .25rem;
+    border-radius: .25rem;
     text-align: center;
+    margin-bottom: 0;
 }
 
 div.SearchContainer div.searchButtonDiv {
@@ -81,7 +92,8 @@ div.SearchContainer p.optionsTitles {
     font-family: 'Crete Round', serif;
     background-color: #582E44 ;
     color: #D7B957;
-    padding: 4px;
+    padding: .25rem;
+    margin: 0 .25rem 0 .25rem;
     border-radius: 4px;
     text-align: center;
 }
@@ -126,7 +138,7 @@ div.SearchContainer p.calorieCountTrackerP {
 
 div.SearchContainer label.calorieTitleLabel {
     width: 100%;
-    margin:  10px 0 5px 0;
+    margin: 0 .25rem 0 .25rem;
 }
 
 
@@ -225,6 +237,7 @@ input[type=range] {
 /*  Desktop version */
 
   @media only screen and (min-width: 600px) {
+
     div.SearchContainer div.SearchOptionsContainer {
         display: flex;
         flex-direction: row;
@@ -234,10 +247,10 @@ input[type=range] {
         margin: 0 5px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
     div.SearchContainer div.calorie-and-count {
-        margin: 16px 0 0 0;
+        margin: 0px 0 0 0;
     }
     div.SearchContainer label.calorieTitleLabel {
         width: 100%;
@@ -250,7 +263,7 @@ input[type=range] {
         font-family: 'Crete Round', serif;
         background-color: #582E44 ;
         color: #D7B957;
-        padding: 4px;
+        padding: .25rem;
         border-radius: 4px;
         text-align: center;
         width: 150px;
@@ -258,7 +271,8 @@ input[type=range] {
   }
 
   input[type="checkbox"] {
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
   }
   label {
     cursor: pointer;
@@ -269,7 +283,7 @@ input[type=range] {
     display: inline-block;
     font: 16px/1em sans-serif;
     height: 16px;
-    margin: 0 .25em 0 0;
+    margin: 0 .25em 0 .25em;
     padding: 0;
     vertical-align: top;
     width: 16px;
@@ -289,6 +303,12 @@ input[type=range] {
   
   input[type="checkbox"]:focus + label::before {
       outline: rgb(59, 153, 252) auto 5px;
+  }
+
+  .calorieContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
   }
 
 
