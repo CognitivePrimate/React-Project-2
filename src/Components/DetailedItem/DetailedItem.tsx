@@ -10,7 +10,6 @@ import "./DetailedItemStyles.css";
 import tofavoriteIcon from "../../Icons/to-favorite.svg";
 import favoritedIcon from "../../Icons/favorited.svg";
 import expand from "../../Icons/expand.svg";
-import { isGetAccessorDeclaration, setConstantValue } from "typescript";
 import TriangleBorder from "../TriangleBorder/TriangleBorder";
 
 interface RouteParams {
