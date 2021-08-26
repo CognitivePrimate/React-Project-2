@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/React-Project-2/static/css/main.5ba8b51c.chunk.css",
+    "main.js": "/React-Project-2/static/js/main.82b1b512.chunk.js",
+    "main.js.map": "/React-Project-2/static/js/main.82b1b512.chunk.js.map",
+    "runtime-main.js": "/React-Project-2/static/js/runtime-main.b11bda6c.js",
+    "runtime-main.js.map": "/React-Project-2/static/js/runtime-main.b11bda6c.js.map",
+    "static/js/2.0cd881c5.chunk.js": "/React-Project-2/static/js/2.0cd881c5.chunk.js",
+    "static/js/2.0cd881c5.chunk.js.map": "/React-Project-2/static/js/2.0cd881c5.chunk.js.map",
+    "static/js/3.1ece591f.chunk.js": "/React-Project-2/static/js/3.1ece591f.chunk.js",
+    "static/js/3.1ece591f.chunk.js.map": "/React-Project-2/static/js/3.1ece591f.chunk.js.map",
+    "index.html": "/React-Project-2/index.html",
+    "static/css/main.5ba8b51c.chunk.css.map": "/React-Project-2/static/css/main.5ba8b51c.chunk.css.map",
+    "static/js/2.0cd881c5.chunk.js.LICENSE.txt": "/React-Project-2/static/js/2.0cd881c5.chunk.js.LICENSE.txt",
+    "static/media/expand.e0356ddd.svg": "/React-Project-2/static/media/expand.e0356ddd.svg",
+    "static/media/favorited.3a444dac.svg": "/React-Project-2/static/media/favorited.3a444dac.svg",
+    "static/media/to-favorite.4041efc8.svg": "/React-Project-2/static/media/to-favorite.4041efc8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b11bda6c.js",
+    "static/js/2.0cd881c5.chunk.js",
+    "static/css/main.5ba8b51c.chunk.css",
+    "static/js/main.82b1b512.chunk.js"
+  ]
+}
